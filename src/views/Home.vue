@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <Amir msg="Hola amir"></Amir>
+    <Amir msg="Hola something"></Amir>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Amir msg="Hola amir"></Amir>
+    <Amir msg="Hola"></Amir>
   </div>
 </template>
 
@@ -23,12 +23,12 @@ export default {
 <style>
 .home {
   font-size: small;
-  display: grid;
   border: 1px solid blueviolet;
   background: mistyrose;
+  display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  justify-content: stretch;
-  justify-items: stretch;
+  height: 100vh;
+  width: 100vw;
 }
 
 .logo-holder {
