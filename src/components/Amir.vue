@@ -82,7 +82,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
-  width: 20%;
   height: 100vh;
   border: 2px solid pink;
 }
