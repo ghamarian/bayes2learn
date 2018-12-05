@@ -16,9 +16,6 @@ export default {
     msg: String
   },
   mounted() {
-    console.log("amir");
-    let k = document.getElementById("cyto");
-    console.dir(k);
     cytoscape({
       container: document.getElementById("cyto"),
       elements: [
@@ -70,15 +67,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #cyto {
-  max-width: none !important;
-  width: 500px;
-  height: 500px;
+  height: 100%;
   display: block;
 }
 .hello {
   border: 1px solid blue;
-  width: 100%;
-  height: 100vh;
-  max-width: none;
+  box-sizing: border-box;
 }
 </style>

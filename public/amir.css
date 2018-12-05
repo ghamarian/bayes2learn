@@ -1,0 +1,11 @@
+#container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    border: 10px solid black;
+    background: mistyrose;
+}
+#cyto {
+    height: 100vh;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}

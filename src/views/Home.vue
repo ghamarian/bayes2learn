@@ -22,13 +22,11 @@ export default {
 
 <style>
 .home {
-  font-size: small;
-  border: 1px solid blueviolet;
-  background: mistyrose;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  height: 100vh;
-  width: 100vw;
+  grid-template-rows: 1fr;
+  font-size: small;
+  box-sizing: border-box;
 }
 
 .logo-holder {
