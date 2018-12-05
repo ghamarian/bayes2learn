@@ -1,7 +1,5 @@
 <template>
-  <div class="hello">
-    <div id="cyto"></div>
-  </div>
+  <div id="cyto"></div>
 </template>
 <script>
 import cytoscape from "cytoscape";
@@ -69,9 +67,6 @@ export default {
 #cyto {
   height: 100%;
   display: block;
-}
-.hello {
   border: 1px solid blue;
-  box-sizing: border-box;
 }
 </style>

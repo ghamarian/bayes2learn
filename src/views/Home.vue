@@ -20,11 +20,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .home {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 1fr;
   font-size: small;
   box-sizing: border-box;
 }
