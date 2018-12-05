@@ -1,0 +1,2540 @@
+{
+    "Distributions": {
+        "Autoregressive": {
+            "distribution_fn": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "sample0": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "num_steps": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Autoregressive",
+                "options": []
+            }
+        },
+        "BatchReshape": {
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "batch_shape": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "Bernoulli": {
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "dtype": {
+                "type": "DType",
+                "value": "tf.int32",
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Bernoulli",
+                "options": []
+            }
+        },
+        "Beta": {
+            "concentration1": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "concentration0": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Beta",
+                "options": []
+            }
+        },
+        "Binomial": {
+            "total_count": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Binomial",
+                "options": []
+            }
+        },
+        "Categorical": {
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "dtype": {
+                "type": "DType",
+                "value": "tf.int32",
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Categorical",
+                "options": []
+            }
+        },
+        "Cauchy": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Cauchy",
+                "options": []
+            }
+        },
+        "Gamma": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "rate": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Gamma",
+                "options": []
+            }
+        },
+        "ConditionalDistribution": {
+            "dtype": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "reparameterization_type": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "allow_nan_stats": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "parameters": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "graph_parents": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "TransformedDistribution": {
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "bijector": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "batch_shape": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "event_shape": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "Dirichlet": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Dirichlet",
+                "options": []
+            }
+        },
+        "DirichletMultinomial": {
+            "total_count": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "DirichletMultinomial",
+                "options": []
+            }
+        },
+        "GammaGamma": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "mixing_concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "mixing_rate": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "GammaGamma",
+                "options": []
+            }
+        },
+        "Normal": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Normal",
+                "options": []
+            }
+        },
+        "Geometric": {
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Geometric",
+                "options": []
+            }
+        },
+        "Uniform": {
+            "low": {
+                "type": "float",
+                "value": 0.0
+            },
+            "high": {
+                "type": "float",
+                "value": 1.0
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Uniform",
+                "options": []
+            }
+        },
+        "HalfCauchy": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "HalfCauchy",
+                "options": []
+            }
+        },
+        "HalfNormal": {
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "HalfNormal",
+                "options": []
+            }
+        },
+        "Independent": {
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "reinterpreted_batch_ndims": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "InverseGamma": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "rate": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "InverseGamma",
+                "options": []
+            }
+        },
+        "InverseGaussian": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "InverseGaussian",
+                "options": []
+            }
+        },
+        "Laplace": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Laplace",
+                "options": []
+            }
+        },
+        "LinearGaussianStateSpaceModel": {
+            "num_timesteps": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "transition_matrix": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "transition_noise": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_matrix": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_noise": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "initial_state_prior": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "initial_step": {
+                "type": "int",
+                "value": 0,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "LinearGaussianStateSpaceModel",
+                "options": []
+            }
+        },
+        "LKJ": {
+            "dimension": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "LKJ",
+                "options": []
+            }
+        },
+        "Logistic": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Logistic",
+                "options": []
+            }
+        },
+        "Mixture": {
+            "cat": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "components": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "use_static_graph": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Mixture",
+                "options": []
+            }
+        },
+        "MixtureSameFamily": {
+            "mixture_distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "components_distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MixtureSameFamily",
+                "options": []
+            }
+        },
+        "Multinomial": {
+            "total_count": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Multinomial",
+                "options": []
+            }
+        },
+        "MultivariateStudentTLinearOperator": {
+            "df": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateStudentTLinearOperator",
+                "options": []
+            }
+        },
+        "NegativeBinomial": {
+            "total_count": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "NegativeBinomial",
+                "options": []
+            }
+        },
+        "OneHotCategorical": {
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "dtype": {
+                "type": "DType",
+                "value": "tf.int32",
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "OneHotCategorical",
+                "options": []
+            }
+        },
+        "Pareto": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "float",
+                "value": 1.0
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Pareto",
+                "options": []
+            }
+        },
+        "Poisson": {
+            "rate": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "log_rate": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "interpolate_nondiscrete": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Poisson",
+                "options": []
+            }
+        },
+        "PoissonLogNormalQuadratureCompound": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "quadrature_size": {
+                "type": "int",
+                "value": 8,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "PoissonLogNormalQuadratureCompound",
+                "options": []
+            }
+        },
+        "QuantizedDistribution": {
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "low": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "high": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "QuantizedDistribution",
+                "options": []
+            }
+        },
+        "ExpRelaxedOneHotCategorical": {
+            "temperature": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "ExpRelaxedOneHotCategorical",
+                "options": []
+            }
+        },
+        "StudentT": {
+            "df": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "StudentT",
+                "options": []
+            }
+        },
+        "TruncatedNormal": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "low": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "high": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "TruncatedNormal",
+                "options": []
+            }
+        },
+        "VectorDiffeomixture": {
+            "mix_loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "temperature": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "quadrature_size": {
+                "type": "int",
+                "value": 8,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorDiffeomixture",
+                "options": []
+            }
+        },
+        "VonMises": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VonMises",
+                "options": []
+            }
+        },
+        "VonMisesFisher": {
+            "mean_direction": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VonMisesFisher",
+                "options": []
+            }
+        },
+        "Chi2": {
+            "df": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Chi2",
+                "options": []
+            }
+        },
+        "Exponential": {
+            "rate": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Exponential",
+                "options": []
+            }
+        },
+        "Chi2WithAbsDf": {
+            "df": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Chi2WithAbsDf",
+                "options": []
+            }
+        },
+        "ConditionalTransformedDistribution": {
+            "distribution": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "bijector": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "batch_shape": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "event_shape": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "MultivariateNormalLinearOperator": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalLinearOperator",
+                "options": []
+            }
+        },
+        "Gumbel": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Gumbel",
+                "options": []
+            }
+        },
+        "Kumaraswamy": {
+            "concentration1": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "concentration0": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Kumaraswamy",
+                "options": []
+            }
+        },
+        "LogNormal": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "LogNormal",
+                "options": []
+            }
+        },
+        "RelaxedBernoulli": {
+            "temperature": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "RelaxedBernoulli",
+                "options": []
+            }
+        },
+        "RelaxedOneHotCategorical": {
+            "temperature": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "logits": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "probs": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "RelaxedOneHotCategorical",
+                "options": []
+            }
+        },
+        "SinhArcsinh": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "skewness": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "tailweight": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "distribution": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "SinhArcsinh",
+                "options": []
+            }
+        },
+        "VectorExponentialLinearOperator": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorExponentialLinearOperator",
+                "options": []
+            }
+        },
+        "VectorLaplaceLinearOperator": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorLaplaceLinearOperator",
+                "options": []
+            }
+        },
+        "VectorSinhArcsinhDiag": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_identity_multiplier": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "skewness": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "tailweight": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "distribution": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalLinearOperator",
+                "options": []
+            }
+        },
+        "GaussianProcess": {
+            "kernel": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "index_points": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "mean_fn": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "observation_noise_variance": {
+                "type": "float",
+                "value": 0.0
+            },
+            "jitter": {
+                "type": "float",
+                "value": 1e-06
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "GaussianProcess",
+                "options": []
+            }
+        },
+        "GaussianProcessRegressionModel": {
+            "kernel": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "index_points": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_index_points": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "observations": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "observation_noise_variance": {
+                "type": "float",
+                "value": 0.0
+            },
+            "predictive_noise_variance": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "mean_fn": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "jitter": {
+                "type": "float",
+                "value": 1e-06
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "GaussianProcessRegressionModel",
+                "options": []
+            }
+        },
+        "MultivariateNormalTriL": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_tril": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalTriL",
+                "options": []
+            }
+        },
+        "MultivariateNormalDiag": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_identity_multiplier": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalDiag",
+                "options": []
+            }
+        },
+        "MultivariateNormalDiagPlusLowRank": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_identity_multiplier": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_perturb_factor": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_perturb_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalDiagPlusLowRank",
+                "options": []
+            }
+        },
+        "MultivariateNormalFullCovariance": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "covariance_matrix": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalFullCovariance",
+                "options": []
+            }
+        },
+        "MultivariateNormalDiagWithSoftplusScale": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale_diag": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "MultivariateNormalDiagWithSoftplusScale",
+                "options": []
+            }
+        },
+        "VectorExponentialDiag": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_identity_multiplier": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorExponentialDiag",
+                "options": []
+            }
+        },
+        "VectorLaplaceDiag": {
+            "loc": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_diag": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_identity_multiplier": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorLaplaceDiag",
+                "options": []
+            }
+        },
+        "Deterministic": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "atol": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "rtol": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Deterministic",
+                "options": []
+            }
+        },
+        "VectorDeterministic": {
+            "loc": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "atol": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "rtol": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "VectorDeterministic",
+                "options": []
+            }
+        },
+        "InverseGammaWithSoftplusConcentrationRate": {
+            "concentration": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "rate": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "InverseGammaWithSoftplusConcentrationRate",
+                "options": []
+            }
+        },
+        "LocalLinearTrendStateSpaceModel": {
+            "num_timesteps": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "level_scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "slope_scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "initial_state_prior": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_noise_scale": {
+                "type": "float",
+                "value": 0.0
+            },
+            "initial_step": {
+                "type": "int",
+                "value": 0,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "SeasonalStateSpaceModel": {
+            "num_timesteps": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "num_seasons": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "drift_scale": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "initial_state_prior": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_noise_scale": {
+                "type": "float",
+                "value": 0.0
+            },
+            "num_steps_per_season": {
+                "type": "int",
+                "value": 1,
+                "options": []
+            },
+            "initial_step": {
+                "type": "int",
+                "value": 0,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "AdditiveStateSpaceModel": {
+            "component_ssms": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "observation_noise_scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "initial_state_prior": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "initial_step": {
+                "type": "int",
+                "value": 0,
+                "options": []
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            }
+        },
+        "Wishart": {
+            "df": {
+                "type": "unknown",
+                "value": "unknown_value"
+            },
+            "scale": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "scale_tril": {
+                "type": "NoneType",
+                "value": null,
+                "options": []
+            },
+            "input_output_cholesky": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "validate_args": {
+                "type": "bool",
+                "value": false,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "allow_nan_stats": {
+                "type": "bool",
+                "value": true,
+                "options": [
+                    "True",
+                    "False"
+                ]
+            },
+            "name": {
+                "type": "str",
+                "value": "Wishart",
+                "options": []
+            }
+        }
+    }
+}
