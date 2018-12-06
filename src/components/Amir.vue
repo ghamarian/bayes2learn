@@ -53,6 +53,7 @@ export default {
   overflow: scroll;
   height: calc(100vh - 110px);
   box-sizing: border-box;
+  text-align: center;
 }
 
 .main-button-list {
@@ -60,6 +61,7 @@ export default {
   grid-template-columns: minmax(200px, 1fr);
   grid-gap: 10px;
   overflow: scroll;
+  text-align: center;
 }
 
 .button-list {
