@@ -2,7 +2,7 @@
   <div class="main-bar">
     <h1>{{ msg }}</h1>
     <div class="main-button-list">
-      <b-btn v-b-toggle.collapse1 variant="primary" @click="loadTextFromFile">Bijectors</b-btn>
+      <b-btn v-b-toggle.collapse1 variant="primary">Bijectors</b-btn>
       <b-collapse id="collapse1" class="mt-2">
         <div class="button-list">
           <button class="btn">Poission</button>
@@ -35,13 +35,6 @@ export default {
     return {
       distributions: distributions.Distributions
     };
-  },
-  methods: {
-    loadTextFromFile() {
-      const reader = new FileReader();
-      reader.onload = e => console.log(e.target.result);
-      reader.readAsText("../assets/distributions.json");
-    }
   }
 };
 </script>
