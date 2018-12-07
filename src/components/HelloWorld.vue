@@ -1,8 +1,9 @@
 <template>
-  <div id="cyto"></div>
+  <div id="cyto" ref="cyto"></div>
 </template>
 <script>
 import cytoscape from "cytoscape";
+
 export default {
   name: "HelloWorld",
   data: function() {
@@ -14,8 +15,8 @@ export default {
     msg: String
   },
   mounted() {
-    cytoscape({
-      container: document.getElementById("cyto"),
+    this.cy = cytoscape({
+      container: this.$refs.cyto,
       elements: [
         // list of graph elements to start with
         {
@@ -56,6 +57,23 @@ export default {
       layout: {
         name: "grid",
         rows: 1
+      }
+    });
+
+    let vm = this;
+    this.cy.on("tap", function(event) {
+      let evtTarget = event.target;
+      if (evtTarget === vm.cy) {
+        let new_node = vm.cy.add({
+          group: "nodes",
+          data: {
+            name: "a",
+            root: "a",
+            weight: 75,
+            content: "a"
+          },
+          position: event.position
+        });
       }
     });
   }
