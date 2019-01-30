@@ -12,15 +12,15 @@ const config = {
   elements: [
     {
       // node a
-      data: { id: "a" }
+      data: { id: "Autoregressive", content: "Autoregressive", weight: 75, name: "Autoregressive" }
     },
     {
       // node b
-      data: { id: "b" }
+      data: { id: "BatchReshape", content: "BatchReshape", name: "BatchReshape"}
     },
     {
       // edge ab
-      data: { id: "ab", source: "a", target: "b" }
+      data: { id: "ab", source: "Autoregressive", target: "BatchReshape" }
     }
   ],
   style: [
@@ -142,6 +142,8 @@ export default {
       // cytoscape.use(contextMenus, jquery)
     },
     afterCreated(cy) {
+      const that = this;
+
       cy.on("tap", event => {
         let evtTarget = event.target;
         if (evtTarget === cy) {
@@ -156,6 +158,10 @@ export default {
             position: event.position
           });
         }
+      });
+      cy.on("tap", 'node', function (evt){
+        console.log(`${evt.target.id()}, ${evt.target.data().content}` );
+        that.$store.state.selected_node = evt.target.data().content;
       });
       cy.contextMenus({
         menuItems: [

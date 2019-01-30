@@ -1,6 +1,6 @@
 <template>
   <div class="main-bar">
-    <h1>{{ msg }}</h1>
+    <h1>{{ selected_node }}</h1>
     <div class="main-button-list">
       <b-btn v-b-toggle.collapse1 variant="primary">Bijectors</b-btn>
       <b-collapse id="collapse1" class="mt-2">
@@ -14,8 +14,8 @@
       </b-collapse>
       <b-btn v-b-toggle.collapse2 variant="primary">Distributions</b-btn>
       <b-collapse id="collapse2" class="mt-2">
-        <div class="button-list card-body">
-          <div v-for="d in Object.keys(distributions)">{{ d }}</div>
+        <div class="button-list">
+          <button class="btn" v-for="d in Object.keys(distributions)">{{ d }}</button>
         </div>
 
       </b-collapse>
@@ -28,8 +28,13 @@ import distributions from "../assets/distributions.json";
 
 export default {
   name: "Amir",
-  props: {
-    msg: String
+  // props: {
+  //   msg: String
+  // },
+  computed: {
+    selected_node() {
+      return this.$store.state.selected_node;
+    }
   },
   data: function() {
     return {
