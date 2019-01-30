@@ -2,7 +2,7 @@
   <div class="home">
     <Amir msg="First"></Amir>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Amir msg="Hola"></Amir>
+    <Properties></Properties>
   </div>
 </template>
 
@@ -10,12 +10,14 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Amir from "@/components/Amir.vue";
+import Properties from "@/components/Properties.vue"
 
 export default {
   name: "home",
   components: {
     HelloWorld,
-    Amir
+    Amir,
+    Properties
   }
 };
 </script>

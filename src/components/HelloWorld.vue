@@ -5,6 +5,7 @@
 import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
+import { mapMutations } from 'vuex';
 
 let selected_color = "#666666";
 let white = "#ffffff";
@@ -128,6 +129,7 @@ export default {
     msg: String
   },
   methods: {
+    ...mapMutations(['select_node']),
     preConfig(cytoscape) {
       // it can be used both ways
       contextMenus(cytoscape, jquery);
@@ -153,7 +155,7 @@ export default {
       });
       cy.on("tap", "node", function(evt) {
         console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-        that.$store.state.selected_node = evt.target.data().content;
+        that.select_node(evt.target.data().content);
       });
       cy.contextMenus({
         menuItems: [
