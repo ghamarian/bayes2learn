@@ -12,11 +12,20 @@ const config = {
   elements: [
     {
       // node a
-      data: { id: "Autoregressive", content: "Autoregressive", weight: 75, name: "Autoregressive" }
+      data: {
+        id: "Autoregressive",
+        content: "Autoregressive",
+        weight: 75,
+        name: "Autoregressive"
+      }
     },
     {
       // node b
-      data: { id: "BatchReshape", content: "BatchReshape", name: "BatchReshape"}
+      data: {
+        id: "BatchReshape",
+        content: "BatchReshape",
+        name: "BatchReshape"
+      }
     },
     {
       // edge ab
@@ -105,23 +114,6 @@ const config = {
   layout: {
     name: "grid",
     rows: 1
-      }
-    });
-
-    let vm = this;
-    this.cy.on("tap", function(event) {
-      let evtTarget = event.target;
-      if (evtTarget === vm.cy) {
-        let new_node = vm.cy.add({
-          group: "nodes",
-          data: {
-            name: "a",
-            root: "a",
-            weight: 75,
-            content: "a"
-          },
-          position: event.position
-        });
   }
 };
 
@@ -159,8 +151,8 @@ export default {
           });
         }
       });
-      cy.on("tap", 'node', function (evt){
-        console.log(`${evt.target.id()}, ${evt.target.data().content}` );
+      cy.on("tap", "node", function(evt) {
+        console.log(`${evt.target.id()}, ${evt.target.data().content}`);
         that.$store.state.selected_node = evt.target.data().content;
       });
       cy.contextMenus({
