@@ -1,23 +1,44 @@
 <template>
   <div class="main-bar">
-    <h1>{{ properties }}</h1>
+    <component v-for="(p_value, p_name) in properties" :is="componentType(p_value)" :key="p_name" :name="p_name"></component>
+    <!-- <p v-for="p in properties">{{ p }}</p> -->
   </div>
 </template>
 
 <script>
 import distributions from "../assets/distributions.json";
+import PropText from "@/components/PropText.vue";
+import PropBool from "@/components/PropBool.vue";
 
 export default {
   name: "Amir",
   computed: {
     properties() {
-      return Object.keys(distributions.Distributions[this.$store.state.selected_node]);
+      return distributions.Distributions[this.$store.state.selected_node];
     }
   },
   data: function() {
     return {
-      distributions: distributions.Distributions
+      distributions: distributions.Distributions,
+      selectedComponent: "PropText",
+      componentTypeMap: {
+        bool: "PropBool",
+        NoneType: "PropText",
+        str: "PropText",
+        unknown: "PropText",
+        DType: "PropText"
+      }
     };
+  },
+  methods: {
+    componentType(p) {
+      console.log(p.type);
+      return this.componentTypeMap[p.type];
+    }
+  },
+  components: {
+    PropText,
+    PropBool
   }
 };
 </script>
