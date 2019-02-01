@@ -5,7 +5,7 @@
 import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 
 let selected_color = "#666666";
 let white = "#ffffff";
@@ -119,17 +119,20 @@ const config = {
 };
 
 export default {
-  name: "HelloWorld",
+  name: "DrawPanel",
   data: function() {
     return {
       config: config
     };
   },
+  computed: {
+    ...mapGetters(["getNewNode"]),
+  },
   props: {
     msg: String
   },
   methods: {
-    ...mapMutations(['select_node']),
+    ...mapMutations(["selectNode"]),
     preConfig(cytoscape) {
       // it can be used both ways
       contextMenus(cytoscape, jquery);
@@ -144,10 +147,10 @@ export default {
           let new_node = cy.add({
             group: "nodes",
             data: {
-              name: "a",
-              root: "a",
+              name: that.getNewNode.name,
+              root: "",
               weight: 75,
-              content: "a"
+              content: that.getNewNode.properties 
             },
             position: event.position
           });
@@ -155,7 +158,7 @@ export default {
       });
       cy.on("tap", "node", function(evt) {
         console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-        that.select_node(evt.target.data().content);
+        that.selectNode(evt.target.data().content);
       });
       cy.contextMenus({
         menuItems: [

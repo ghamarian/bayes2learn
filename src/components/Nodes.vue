@@ -1,6 +1,6 @@
 <template>
   <div class="main-bar">
-    <h1>{{ selected_node }}</h1>
+    <!-- <h1>{{ selected_node }}</h1> -->
     <div class="main-button-list">
       <b-btn v-b-toggle.collapse1 variant="primary">Bijectors</b-btn>
       <b-collapse id="collapse1" class="mt-2">
@@ -15,9 +15,8 @@
       <b-btn v-b-toggle.collapse2 variant="primary">Distributions</b-btn>
       <b-collapse id="collapse2" class="mt-2">
         <div class="button-list">
-          <button class="btn" v-for="d in Object.keys(distributions)">{{ d }}</button>
+          <button class="btn" v-for="d in Object.keys(distributions)" @click="setNewNode($event.target.textContent)" :key=d.name>{{ d }}</button>
         </div>
-
       </b-collapse>
     </div>
   </div>
@@ -25,21 +24,23 @@
 
 <script>
 import distributions from "../assets/distributions.json";
+import { mapMutations } from 'vuex';
 
 export default {
-  name: "Amir",
-  // props: {
-  //   msg: String
+  name: "Nodes",
+  
+  // computed: {
+  //   selected_node() {
+  //     return this.$store.state.selected_node;
+  //   }
   // },
-  computed: {
-    selected_node() {
-      return this.$store.state.selected_node;
-    }
-  },
   data: function() {
     return {
       distributions: distributions.Distributions
     };
+  },
+  methods: {
+    ...mapMutations(['setNewNode'])
   }
 };
 </script>

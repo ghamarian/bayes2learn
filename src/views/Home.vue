@@ -1,22 +1,22 @@
 <template>
   <div class="home">
-    <Amir msg="First"></Amir>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Nodes msg="First"></Nodes>
+    <DrawPanel msg="Welcome to Your Vue.js App"/>
     <Properties></Properties>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-import Amir from "@/components/Amir.vue";
+import DrawPanel from "@/components/DrawPanel.vue";
+import Nodes from "@/components/Nodes.vue";
 import Properties from "@/components/Properties.vue"
 
 export default {
   name: "home",
   components: {
-    HelloWorld,
-    Amir,
+    DrawPanel,
+    Nodes,
     Properties
   }
 };
