@@ -158,7 +158,7 @@ export default {
       });
       cy.on("tap", "node", function(evt) {
         console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-        that.selectNode(evt.target.data().content);
+        that.selectNode(evt.target.data('name'));
       });
       cy.contextMenus({
         menuItems: [
