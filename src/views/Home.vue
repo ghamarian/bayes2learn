@@ -8,7 +8,7 @@
 
 <script>
 // @ is an alias to /src
-import DrawPanel from "@/components/DrawPanel.vue";
+import DrawPanel from "@/components/DrawPanel1.vue";
 import Nodes from "@/components/Nodes.vue";
 import Properties from "@/components/Properties.vue"
 
