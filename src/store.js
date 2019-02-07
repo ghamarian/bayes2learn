@@ -8,7 +8,7 @@ export default new Vuex.Store({
 
   state: {
     selectedNode: "Poisson",
-    newNode: "Poission",
+    newNode: "Poisson",
     nodes: {}
   },
   getters: {
