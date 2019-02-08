@@ -1,11 +1,20 @@
 <template>
-  <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/>
+  <!-- <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/> -->
+  <cytoscape
+    :config="config"
+    :preConfig="preConfig"
+    :afterCreated="afterCreated"
+    v-on:mousedown="addNode"
+    v-on:cxttapstart="updateNode"
+  >
+    <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/>
+  </cytoscape>
 </template>
 <script>
 import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
-import { mapMutations, mapGetters } from 'vuex';
+import { mapMutations, mapGetters } from "vuex";
 
 let selected_color = "#666666";
 let white = "#ffffff";
@@ -136,15 +145,19 @@ const config = {
   }
 };
 
+const elements = [...config.elements];
+delete config.elements;
+
 export default {
   name: "DrawPanel",
   data: function() {
     return {
-      config: config
+      config,
+      elements
     };
   },
   computed: {
-    ...mapGetters(["getNewNode"]),
+    ...mapGetters(["getNewNode"])
   },
   props: {
     msg: String
@@ -156,28 +169,70 @@ export default {
       contextMenus(cytoscape, jquery);
       // cytoscape.use(contextMenus, jquery)
     },
+    async addNode(event) {
+      let evtTarget = event.target;
+      const cy = await this.$cytoscape.instance
+      if (evtTarget === cy) {
+        let new_node = {
+          group: "nodes",
+          data: {
+            name: this.getNewNode.name,
+            root: "",
+            weight: 75,
+            content: this.getNewNode.properties
+          },
+          position: event.position
+        };
+        this.elements.push(new_node);
+      }
+    },
+    updateNode(event) {
+      if (event.target.id) {
+        const n = {
+          data: { id: event.target.id(), shape: "rectangle" },
+          position: event.target.position(),
+          group: "nodes"
+        };
+        console.log("updating: ", n);
+        const elements = [
+          ...this.elements.filter(e => e.data.id !== event.target.id()),
+          n
+        ];
+        console.log("filtered elements: ", elements);
+        this.elements = elements;
+      }
+    },
+    removeNode(event) {
+      if (event.target.id) {
+        console.log("removing: ", event.target.id());
+        this.elements = this.elements.filter(
+          e => e.data.id !== event.target.id()
+        );
+      }
+    },
     afterCreated(cy) {
       const that = this;
 
-      cy.on("tap", event => {
-        let evtTarget = event.target;
-        if (evtTarget === cy) {
-          let new_node = cy.add({
-            group: "nodes",
-            data: {
-              name: that.getNewNode.name,
-              root: "",
-              weight: 75,
-              content: that.getNewNode.properties 
-            },
-            position: event.position
-          });
-        }
-      });
-      cy.on("tap", "node", function(evt) {
-        console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-        that.selectNode(evt.target.data('name'));
-      });
+      //   cy.on("tap", event => {
+      //     let evtTarget = event.target;
+      //     if (evtTarget === cy) {
+      //       let new_node = cy.add({
+      //         group: "nodes",
+      //         data: {
+      //           name: that.getNewNode.name,
+      //           root: "",
+      //           weight: 75,
+      //           content: that.getNewNode.properties
+      //         },
+      //         position: event.position
+      //       });
+      //     }
+      //     console.dir(that.$cytoscape);
+      //   });
+      //   cy.on("tap", "node", function(evt) {
+      //     console.log(`${evt.target.id()}, ${evt.target.data().content}`);
+      //     that.selectNode(evt.target.data("name"));
+      //   });
       cy.contextMenus({
         menuItems: [
           {

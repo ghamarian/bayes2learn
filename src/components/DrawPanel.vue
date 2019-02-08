@@ -3,7 +3,7 @@
 </template>
 <script>
 import cytoscape from "cytoscape";
-import { mapMutations, mapGetters } from "vuex";
+import { mapMutations, mapGetters, mapActions } from "vuex";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
 import jquery from "jquery";
@@ -19,10 +19,11 @@ export default {
     msg: String
   },
   computed: {
-    ...mapGetters(["getNewNode"])
+    ...mapGetters(["getNewNode", "getCy"])
   },
   methods: {
-    ...mapMutations(["selectNode"])
+    ...mapMutations(["selectNode"]),
+    ...mapActions(["setCy"])
   },
   mounted() {
     this.cy = cytoscape({
@@ -131,21 +132,7 @@ export default {
     });
 
     let vm = this;
-    // this.cy.on("tap", function(event) {
-    //   let evtTarget = event.target;
-    //   if (evtTarget === vm.cy) {
-    //     let new_node = vm.cy.add({
-    //       group: "nodes",
-    //       data: {
-    //         name: "a",
-    //         root: "a",
-    //         weight: 75,
-    //         content: "a"
-    //       },
-    //       position: event.position
-    //     });
-    //   }
-    // });
+    // this.setCy(vm.cy);
 
     this.cy.on("tap", event => {
       let evtTarget = event.target;
@@ -163,6 +150,7 @@ export default {
       }
     });
     this.cy.on("tap", "node", function(evt) {
+      console.dir(vm.$cytoscape);
       console.log(`${evt.target.id()}, ${evt.target.data().content}`);
       vm.selectNode(evt.target.data("name"));
     });

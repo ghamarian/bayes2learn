@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
     selectedNode: "Poisson",
     newNode: "Poisson",
-    nodes: {}
+    nodes: {},
+    cy: null
   },
   getters: {
     getSelectedProperties: state => {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
       console.log(`inside getNewNode`);
       return { name: state.newNode, 
         properties: distributions.Distributions[state.newNode] };
+    },
+    getCy: state => {
+      return state.cy;
     }
   },
   mutations: {
@@ -27,7 +31,14 @@ export default new Vuex.Store({
     },
     setNewNode: (state, node) => {
       state.newNode = node;
+    },
+    setCy: (state, cy) => {
+      state.cy = cy;
     }
   },
-  actions: {}
+  actions: {
+    setCy: ({ commit }, cy) => {
+      commit("setCy", cy);
+    }
+  }
 });
