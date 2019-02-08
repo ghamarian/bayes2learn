@@ -1,6 +1,7 @@
 <template>
   <!-- <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/> -->
   <cytoscape
+    id="cyto"
     :config="config"
     :preConfig="preConfig"
     :afterCreated="afterCreated"
@@ -73,15 +74,6 @@ const config = {
         label: `data(name)`
       }
     },
-    // {
-    //     selector: 'node:selected',
-    //     style: {
-    //         'border-width': 3,
-    //         'border-color': selected_color
-    //
-    //     }
-    // },
-
     {
       selector: "edge",
       style: {
@@ -146,7 +138,7 @@ const config = {
 };
 
 const elements = [...config.elements];
-delete config.elements;
+// delete config.elements;
 
 export default {
   name: "DrawPanel",
@@ -183,7 +175,8 @@ export default {
           },
           position: event.position
         };
-        this.elements.push(new_node);
+        // this.elements.push(new_node);
+        this.elements = [...this.elements, new_node];
       }
     },
     updateNode(event) {
@@ -275,5 +268,6 @@ cytoscape {
   height: 100%;
   display: block;
   border: 1px solid blue;
+  background: moccasin;
 }
 </style>
