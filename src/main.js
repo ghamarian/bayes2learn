@@ -6,7 +6,9 @@ import store from "./store";
 import "cytoscape";
 import VueCytoscape from "vue-cytoscape";
 import "vue-cytoscape/dist/vue-cytoscape.css";
-
+import UUID from 'vue-uuid';
+ 
+Vue.use(UUID);
 Vue.use(VueCytoscape);
 Vue.config.productionTip = false;
 

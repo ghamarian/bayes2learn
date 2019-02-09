@@ -9,12 +9,15 @@ export default new Vuex.Store({
   state: {
     selectedNode: "Poisson",
     newNode: "Poisson",
-    nodes: {},
-    cy: null
+    elements: [],
   },
   getters: {
     getSelectedProperties: state => {
-      return distributions.Distributions[state.selectedNode];
+      // return distributions.Distributions[state.selectedNode];
+      let selected = state.elements.filter(e => e.data.id == state.selectedNode);
+      if (selected.length > 0) {
+        return selected[0].data.content;
+      } else return [];
     },
     getNewNode: state => {
       console.log(`inside getNewNode`);
@@ -23,6 +26,9 @@ export default new Vuex.Store({
     },
     getCy: state => {
       return state.cy;
+    },
+    elements: state => {
+      return state.elements;
     }
   },
   mutations: {
@@ -32,13 +38,19 @@ export default new Vuex.Store({
     setNewNode: (state, node) => {
       state.newNode = node;
     },
-    setCy: (state, cy) => {
-      state.cy = cy;
-    }
+    pushElement: (state, payload) => {
+      state.elements.push(payload);
+    },
+    updateElement: (state, {name, value}) => {
+      let selected = state.elements.filter(e => e.data.id == state.selectedNode);
+      if (selected.length > 0) {
+        selected[0].data.content[name].value = value;
+      } 
+    },
   },
   actions: {
-    setCy: ({ commit }, cy) => {
-      commit("setCy", cy);
+    pushElement: ({ commit }, payload) => {
+      commit("updateValue", payload);
     }
   }
 });

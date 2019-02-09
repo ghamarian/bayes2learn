@@ -1,6 +1,12 @@
 <template>
   <div class="main-bar">
-    <component v-for="(p_value, p_name) in getSelectedProperties" :is="componentType(p_value)" :key="p_name" :name="p_name"></component>
+    <component
+      v-for="(p_value, p_name) in getSelectedProperties"
+      :is="componentType(p_value)"
+      :key="p_name"
+      :name="p_name"
+      :value="p_value"
+    ></component>
     <!-- <p v-for="p in getSelectedProperties">{{ p }}</p> -->
   </div>
 </template>
@@ -13,7 +19,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "Properties",
   computed: {
-    ...mapGetters(["getSelectedProperties"]),
+    ...mapGetters(["getSelectedProperties"])
   },
   data: function() {
     return {

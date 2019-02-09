@@ -16,11 +16,28 @@ import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
 import { mapMutations, mapGetters } from "vuex";
+import uuid from "uuid/v4";
 
 let selected_color = "#666666";
 let white = "#ffffff";
 const config = {
   elements: [
+    {
+      // node b
+      data: {
+        id: "a",
+        content: "a",
+        name: "a"
+      }
+    },
+    {
+      // node b
+      data: {
+        id: "b",
+        content: "b",
+        name: "b"
+      }
+    },
     {
       // node a
       data: {
@@ -38,22 +55,6 @@ const config = {
         content: "BatchReshape",
         name: "BatchReshape",
         parent: ["a", "b"]
-      }
-    },
-    {
-      // node b
-      data: {
-        id: "a",
-        content: "a",
-        name: "a"
-      }
-    },
-    {
-      // node b
-      data: {
-        id: "b",
-        content: "b",
-        name: "b"
       }
     },
     {
@@ -137,25 +138,25 @@ const config = {
   }
 };
 
-const elements = [...config.elements];
-// delete config.elements;
+// const elements = [...config.elements];
+delete config.elements;
 
 export default {
   name: "DrawPanel",
   data: function() {
     return {
       config,
-      elements
+      // elements
     };
   },
   computed: {
-    ...mapGetters(["getNewNode"])
+    ...mapGetters(["getNewNode", "elements"]),
   },
   props: {
     msg: String
   },
   methods: {
-    ...mapMutations(["selectNode"]),
+    ...mapMutations(["selectNode", "pushElement"]),
     preConfig(cytoscape) {
       // it can be used both ways
       contextMenus(cytoscape, jquery);
@@ -163,11 +164,12 @@ export default {
     },
     async addNode(event) {
       let evtTarget = event.target;
-      const cy = await this.$cytoscape.instance
+      const cy = await this.$cytoscape.instance;
       if (evtTarget === cy) {
         let new_node = {
           group: "nodes",
           data: {
+            id: this.$uuid.v4(),
             name: this.getNewNode.name,
             root: "",
             weight: 75,
@@ -175,8 +177,7 @@ export default {
           },
           position: event.position
         };
-        // this.elements.push(new_node);
-        this.elements = [...this.elements, new_node];
+        this.pushElement(new_node);
       }
     },
     updateNode(event) {
@@ -206,26 +207,10 @@ export default {
     afterCreated(cy) {
       const that = this;
 
-      //   cy.on("tap", event => {
-      //     let evtTarget = event.target;
-      //     if (evtTarget === cy) {
-      //       let new_node = cy.add({
-      //         group: "nodes",
-      //         data: {
-      //           name: that.getNewNode.name,
-      //           root: "",
-      //           weight: 75,
-      //           content: that.getNewNode.properties
-      //         },
-      //         position: event.position
-      //       });
-      //     }
-      //     console.dir(that.$cytoscape);
-      //   });
-      //   cy.on("tap", "node", function(evt) {
-      //     console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-      //     that.selectNode(evt.target.data("name"));
-      //   });
+      cy.on("tap", "node", function(evt) {
+        console.log(`${evt.target.id()}, ${evt.target.data().content}`);
+        that.selectNode(evt.target.id());
+      });
       cy.contextMenus({
         menuItems: [
           {
