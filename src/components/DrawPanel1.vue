@@ -17,6 +17,7 @@ import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
 import { mapMutations, mapGetters } from "vuex";
 import uuid from "uuid/v4";
+import _ from 'lodash';
 
 let selected_color = "#666666";
 let white = "#ffffff";
@@ -173,7 +174,7 @@ export default {
             name: this.getNewNode.name,
             root: "",
             weight: 75,
-            content: this.getNewNode.properties
+            content: _.cloneDeep(this.getNewNode.properties, true)
           },
           position: event.position
         };

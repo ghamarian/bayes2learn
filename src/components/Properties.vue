@@ -3,9 +3,8 @@
     <component
       v-for="(p_value, p_name) in getSelectedProperties"
       :is="componentType(p_value)"
-      :key="p_name"
+      :key="`${selectedId}_${p_name}`"
       :name="p_name"
-      :value="p_value"
     ></component>
     <!-- <p v-for="p in getSelectedProperties">{{ p }}</p> -->
   </div>
@@ -19,7 +18,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "Properties",
   computed: {
-    ...mapGetters(["getSelectedProperties"])
+    ...mapGetters(["getSelectedProperties", "selectedId"])
   },
   data: function() {
     return {
