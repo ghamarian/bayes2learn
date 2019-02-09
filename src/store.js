@@ -15,10 +15,10 @@ export default new Vuex.Store({
   getters: {
     getSelectedProperties: state => {
       // return distributions.Distributions[state.selectedNode];
-      let selected = state.elements.filter(e => e.data.id == state.selectedNode);
-      if (selected.length > 0) {
-        return selected[0].data.content;
-      } else return [];
+      if (state.currentNode) {
+        return state.currentNode.content;
+      }
+      return null;
     },
     getNewNode: state => {
       console.log(`inside getNewNode`);
@@ -28,9 +28,8 @@ export default new Vuex.Store({
       };
     },
     getValue: state => name => {
-      let selected = state.elements.filter(e => e.data.id == state.selectedNode);
-      if (selected.length > 0) {
-        return selected[0].data.content[name].value;
+      if (state.currentNode) {
+        return state.currentNode.content[name].value;
       }
       return null;
     },
@@ -56,10 +55,8 @@ export default new Vuex.Store({
       name,
       value
     }) => {
-      let selected = state.elements.filter(e => e.data.id == state.selectedNode);
-      if (selected.length > 0) {
-        console.log('update', selected[0].data);
-        selected[0].data.content[name].value = value;
+      if (state.currentNode) {
+        state.currentNode.content[name].value = value;
       }
     },
   },
