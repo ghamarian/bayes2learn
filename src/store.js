@@ -51,20 +51,17 @@ export default new Vuex.Store({
     pushElement: (state, payload) => {
       state.elements.push(payload);
     },
-    updateElement: (state, {
-      name,
-      value
-    }) => {
+    updateElement: (state, { name, value }) => {
       if (state.currentNode) {
         state.currentNode.content[name].value = value;
       }
     },
   },
   actions: {
-    pushElement: ({
-      commit
-    }, payload) => {
-      commit("updateValue", payload);
-    }
+  //   pushElement: ({
+  //     commit
+  //   }, payload) => {
+  //     commit("updateValue", payload);
+  //   }
   }
 });

@@ -3,7 +3,7 @@
         "Autoregressive": {
             "distribution_fn": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "sample0": {
                 "type": "NoneType",
@@ -40,11 +40,11 @@
         "BatchReshape": {
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "batch_shape": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -142,7 +142,7 @@
         "Binomial": {
             "total_count": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -217,11 +217,11 @@
         "Cauchy": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -248,11 +248,11 @@
         "Gamma": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "rate": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -279,19 +279,19 @@
         "ConditionalDistribution": {
             "dtype": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "reparameterization_type": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "allow_nan_stats": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "parameters": {
                 "type": "NoneType",
@@ -312,7 +312,7 @@
         "TransformedDistribution": {
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "bijector": {
                 "type": "NoneType",
@@ -346,7 +346,7 @@
         "Dirichlet": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -373,11 +373,11 @@
         "DirichletMultinomial": {
             "total_count": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -404,15 +404,15 @@
         "GammaGamma": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "mixing_concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "mixing_rate": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -439,11 +439,11 @@
         "Normal": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -534,11 +534,11 @@
         "HalfCauchy": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -565,7 +565,7 @@
         "HalfNormal": {
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -592,7 +592,7 @@
         "Independent": {
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "reinterpreted_batch_ndims": {
                 "type": "NoneType",
@@ -616,11 +616,11 @@
         "InverseGamma": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "rate": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -647,11 +647,11 @@
         "InverseGaussian": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -678,11 +678,11 @@
         "Laplace": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -709,27 +709,27 @@
         "LinearGaussianStateSpaceModel": {
             "num_timesteps": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "transition_matrix": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "transition_noise": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_matrix": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_noise": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "initial_state_prior": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "initial_step": {
                 "type": "int",
@@ -761,11 +761,11 @@
         "LKJ": {
             "dimension": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -792,11 +792,11 @@
         "Logistic": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -823,11 +823,11 @@
         "Mixture": {
             "cat": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "components": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -862,11 +862,11 @@
         "MixtureSameFamily": {
             "mixture_distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "components_distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -893,7 +893,7 @@
         "Multinomial": {
             "total_count": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -930,15 +930,15 @@
         "MultivariateStudentTLinearOperator": {
             "df": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -965,7 +965,7 @@
         "NegativeBinomial": {
             "total_count": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -1040,7 +1040,7 @@
         "Pareto": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "float",
@@ -1112,11 +1112,11 @@
         "PoissonLogNormalQuadratureCompound": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "quadrature_size": {
                 "type": "int",
@@ -1148,7 +1148,7 @@
         "QuantizedDistribution": {
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "low": {
                 "type": "NoneType",
@@ -1177,7 +1177,7 @@
         "ExpRelaxedOneHotCategorical": {
             "temperature": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -1214,15 +1214,15 @@
         "StudentT": {
             "df": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1249,19 +1249,19 @@
         "TruncatedNormal": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "low": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "high": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1288,15 +1288,15 @@
         "VectorDiffeomixture": {
             "mix_loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "temperature": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "loc": {
                 "type": "NoneType",
@@ -1338,11 +1338,11 @@
         "VonMises": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1369,11 +1369,11 @@
         "VonMisesFisher": {
             "mean_direction": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1400,7 +1400,7 @@
         "Chi2": {
             "df": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1427,7 +1427,7 @@
         "Exponential": {
             "rate": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1454,7 +1454,7 @@
         "Chi2WithAbsDf": {
             "df": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1481,7 +1481,7 @@
         "ConditionalTransformedDistribution": {
             "distribution": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "bijector": {
                 "type": "NoneType",
@@ -1548,11 +1548,11 @@
         "Gumbel": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -1645,7 +1645,7 @@
         "RelaxedBernoulli": {
             "temperature": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -1682,7 +1682,7 @@
         "RelaxedOneHotCategorical": {
             "temperature": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "logits": {
                 "type": "NoneType",
@@ -1719,11 +1719,11 @@
         "SinhArcsinh": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "skewness": {
                 "type": "NoneType",
@@ -1884,11 +1884,11 @@
         "GaussianProcess": {
             "kernel": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "index_points": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "mean_fn": {
                 "type": "NoneType",
@@ -1928,11 +1928,11 @@
         "GaussianProcessRegressionModel": {
             "kernel": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "index_points": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_index_points": {
                 "type": "NoneType",
@@ -2139,11 +2139,11 @@
         "MultivariateNormalDiagWithSoftplusScale": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale_diag": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -2246,7 +2246,7 @@
         "Deterministic": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "atol": {
                 "type": "NoneType",
@@ -2283,7 +2283,7 @@
         "VectorDeterministic": {
             "loc": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "atol": {
                 "type": "NoneType",
@@ -2320,11 +2320,11 @@
         "InverseGammaWithSoftplusConcentrationRate": {
             "concentration": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "rate": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "validate_args": {
                 "type": "bool",
@@ -2351,19 +2351,19 @@
         "LocalLinearTrendStateSpaceModel": {
             "num_timesteps": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "level_scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "slope_scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "initial_state_prior": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_noise_scale": {
                 "type": "float",
@@ -2399,19 +2399,19 @@
         "SeasonalStateSpaceModel": {
             "num_timesteps": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "num_seasons": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "drift_scale": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "initial_state_prior": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_noise_scale": {
                 "type": "float",
@@ -2452,7 +2452,7 @@
         "AdditiveStateSpaceModel": {
             "component_ssms": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "observation_noise_scale": {
                 "type": "NoneType",
@@ -2494,7 +2494,7 @@
         "Wishart": {
             "df": {
                 "type": "unknown",
-                "value": "unknown_value"
+                "value": ""
             },
             "scale": {
                 "type": "NoneType",

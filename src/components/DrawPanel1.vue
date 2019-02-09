@@ -16,8 +16,9 @@ import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
 import { mapMutations, mapGetters } from "vuex";
-import uuid from "uuid/v4";
-import _ from 'lodash';
+import _ from "lodash";
+import edgehandles from "cytoscape-edgehandles";
+import handle_edges_defaults from "../assets/handled_edges.js";
 
 let selected_color = "#666666";
 let white = "#ffffff";
@@ -146,12 +147,12 @@ export default {
   name: "DrawPanel",
   data: function() {
     return {
-      config,
+      config
       // elements
     };
   },
   computed: {
-    ...mapGetters(["getNewNode", "elements"]),
+    ...mapGetters(["getNewNode", "elements"])
   },
   props: {
     msg: String
@@ -162,6 +163,7 @@ export default {
       // it can be used both ways
       contextMenus(cytoscape, jquery);
       // cytoscape.use(contextMenus, jquery)
+      cytoscape.use(edgehandles);
     },
     async addNode(event) {
       let evtTarget = event.target;
@@ -207,6 +209,8 @@ export default {
     },
     afterCreated(cy) {
       const that = this;
+
+      cy.edgehandles(handle_edges_defaults);
 
       cy.on("tap", "node", function(evt) {
         console.log(`${evt.target.id()}, ${evt.target.data().content}`);
