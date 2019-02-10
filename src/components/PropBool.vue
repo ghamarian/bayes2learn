@@ -1,7 +1,7 @@
 <template>
   <div>
     <div> {{ name }} </div>
-    <select>
+    <select class='my-option'>
       <option value="True">True</option>
       <option value="False" selected>False</option>
     </select>
@@ -14,6 +14,9 @@ export default {
 </script>
 
 <style scoped>
+.my-option {
+  width: 100%;
+}
 #main-div {
   background-color: brown;
 }

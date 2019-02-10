@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>{{ name }}</div>
-    <input :value="getValue(name)" @input="updateElement({name: name, value: $event.target.value})" type="text">
+    <input class="prop-input" :value="getValue(name)" @input="updateElement({name: name, value: $event.target.value})" type="text">
   </div>
 </template>
 <script>
@@ -18,3 +18,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.prop-input {
+  width: 100%;
+  height: calc(2.25rem + 2px);
+}
+</style>
+

@@ -113,25 +113,30 @@ export default {
             image: { src: "remove.svg", width: 12, height: 12, x: 6, y: 4 },
             selector: "node, edge",
             onClickFunction: function(event) {
+              
               // var target = event.target || event.cyTarget;
               // target.remove();
-              let id_list = [];
-              for (let i = 0; i < 5; i++) {
-                let new_node_id = that.$uuid.v4();
-                id_list.push(new_node_id);
-                let new_node = cy.add({
-                  group: "nodes",
-                  data: {
-                    id: new_node_id,
-                    name: `amir-${i}`,
-                    root: "kashk",
-                    weight: 75,
-                    content: "kashk"
-                  }
-                  // position: event.position
-                });
-              }
-              cy.center();
+              // let id_list = [];
+              // for (let i = 0; i < 5; i++) {
+              //   let new_node_id = that.$uuid.v4();
+              //   id_list.push(new_node_id);
+              //   // let new_node = cy.add({
+              //   let new_node = {
+              //     group: "nodes",
+              //     data: {
+              //       id: new_node_id,
+              //       name: `amir-${i}`,
+              //       root: "kashk",
+              //       weight: 75,
+              //       content: "kashk"
+              //     }
+              //     // position: event.position
+              //   };
+              //   that.elements.push(new_node);
+              // }
+              // cy.center();
+
+              let id_list = that.elements.map(e => e.data.id);
 
               cy.$(`#${id_list[0]}`).move({ parent: id_list[3] });
               cy.$(`#${id_list[1]}`).move({ parent: [id_list[3], id_list[4]] });
