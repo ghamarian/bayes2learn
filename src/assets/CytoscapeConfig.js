@@ -63,7 +63,7 @@ style: [
         css: {
             "text-valign": "center",
             color: "white",
-            width: 200,
+            width: 300,
             height: 40,
             shape: "roundrectangle",
             label: `data(name)`

@@ -113,7 +113,7 @@ export default {
             image: { src: "remove.svg", width: 12, height: 12, x: 6, y: 4 },
             selector: "node, edge",
             onClickFunction: function(event) {
-              
+
               // var target = event.target || event.cyTarget;
               // target.remove();
               // let id_list = [];
