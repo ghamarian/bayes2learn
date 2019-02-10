@@ -12,36 +12,38 @@
           <button class="btn">Normal</button>
         </div>
       </b-collapse>
-      <b-btn v-b-toggle.collapse2 variant="primary">Distributions</b-btn>
-      <b-collapse id="collapse2" class="mt-2">
-        <div class="button-list">
-          <button class="btn" v-for="d in Object.keys(distributions)" @click="setNewNode($event.target.textContent)" :key=d.name>{{ d }}</button>
-        </div>
-      </b-collapse>
+      <tfp-api-group class="button-list"  :elements="distributions">Distirbutions</tfp-api-group> 
     </div>
   </div>
 </template>
 
 <script>
 import distributions from "../assets/distributions.json";
-import { mapMutations } from 'vuex';
+import { mapMutations } from "vuex";
+import TfpApiGroup from "@/components/TfpApiGroup.vue";
 
 export default {
   name: "Nodes",
-  
-  // computed: {
-  //   selected_node() {
-  //     return this.$store.state.selected_node;
-  //   }
-  // },
+
   data: function() {
     return {
-      distributions: distributions.Distributions
+      distributions: distributions.Distributions,
     };
   },
+  computed: {
+    distributionsList() {
+      return Object.keys(this.distributions).filter(
+        dist => dist.toLowerCase().includes(this.substr.toLowerCase())
+      );
+    }
+  },
   methods: {
-    ...mapMutations(['setNewNode'])
+    ...mapMutations(["setNewNode"])
+  },
+  components: {
+    TfpApiGroup
   }
+
 };
 </script>
 

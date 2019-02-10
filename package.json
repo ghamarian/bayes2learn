@@ -12,8 +12,8 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "cytoscape-edgehandles": "^3.5.0",
     "vue": "^2.5.17",
-    "vue-cytoscape": "file:../lib/vue-cytoscape-0.2.2.tgz",
-    "cytoscape": "file:../lib/cytoscape-3.5.0-unstable.tgz",
+    "vue-cytoscape": "file:./lib/vue-cytoscape-0.2.2.tgz",
+    "cytoscape": "file:./lib/cytoscape-3.5.0-unstable.tgz",
     "vue-router": "^3.0.1",
     "vue-uuid": "^1.1.1",
     "vuex": "^3.1.0"
