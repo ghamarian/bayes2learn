@@ -97,6 +97,13 @@ export default {
         console.log(`${evt.target.id()}, ${evt.target.data().content}`);
         that.selectNode(evt.target.id());
       });
+
+      cy.on("ehcomplete", (event, sourceNode, targetNode, addedEles) => {
+        let { position } = event;
+        console.log(`the edge completed.....;`)
+
+      });
+
       cy.contextMenus({
         menuItems: [
           {
@@ -110,7 +117,7 @@ export default {
               // target.remove();
               let id_list = [];
               for (let i = 0; i < 5; i++) {
-                let new_node_id = that.$uuid.v4()
+                let new_node_id = that.$uuid.v4();
                 id_list.push(new_node_id);
                 let new_node = cy.add({
                   group: "nodes",
@@ -120,16 +127,15 @@ export default {
                     root: "kashk",
                     weight: 75,
                     content: "kashk"
-                  },
+                  }
                   // position: event.position
                 });
               }
               cy.center();
 
-
-              cy.$(`#${id_list[0]}`).move({parent: id_list[3]});
-              cy.$(`#${id_list[1]}`).move({parent: [id_list[3], id_list[4]]});
-              cy.$(`#${id_list[2]}`).move({parent: [id_list[4]]});
+              cy.$(`#${id_list[0]}`).move({ parent: id_list[3] });
+              cy.$(`#${id_list[1]}`).move({ parent: [id_list[3], id_list[4]] });
+              cy.$(`#${id_list[2]}`).move({ parent: [id_list[4]] });
 
               // let new_node2 = cy.add({
               //   group: "nodes",

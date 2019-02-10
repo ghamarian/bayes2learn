@@ -3,14 +3,17 @@
     <b-btn v-b-toggle.collapse variant="primary"><slot></slot></b-btn>
     <b-collapse id="collapse" class="mt-2">
       <div class="button-list">
-        <label for="filter">Filter</label>
-        <input id="filter" type="text" v-model="substr">
-        <button
-          class="btn"
+        <b-form-input v-model="substr"
+                  type="text"
+                  placeholder="Enter text to search"></b-form-input>
+        <b-button
+          id="my-button"
           v-for="d in filteredElements"
           @click="setNewNode($event.target.textContent)"
           :key="d.name"
-        >{{ d }}</button>
+          :variant="'primary'"
+          :pressed="d === getNewNode.name"
+        >{{ d }}</b-button>
       </div>
     </b-collapse>
   </div>
@@ -18,6 +21,7 @@
 
 <script>
 import { mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "ApiGroup",
@@ -29,6 +33,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['getNewNode']),
     filteredElements() {
       return Object.keys(this.elements).filter(dist =>
         dist.toLowerCase().includes(this.substr.toLowerCase())
@@ -50,6 +55,26 @@ export default {
   box-sizing: border-box;
   text-align: center;
 }
+
+ #my-button {
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+} 
+
+
+#my-button.active {
+    color: mistyrose !important;
+    background-color: purple !important;
+    border-color: white !important;
+}  
+
+
+/*#my-buttons [area-pressed^=true] {
+    color: black !important;
+    background-color: mistyrose !important;
+    border-color: white !important;
+} */
 
 .main-button-list {
   display: grid;
