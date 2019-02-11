@@ -75,7 +75,8 @@ style: [
             width: 3,
             "line-color": "#ccc",
             "target-arrow-color": "#ccc",
-            "target-arrow-shape": "triangle"
+            "target-arrow-shape": "triangle",
+            label: `data(name)`
         }
     },
     {

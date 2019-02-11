@@ -36,13 +36,13 @@ export default new Vuex.Store({
     },
     getEdgeValue: state => {
       if (state.currentEdge) {
-        return state.currentEdge
+        return state.currentEdge;
       }
       return null;
     },
     getEdgeIncomingProperty: state => {
       if (state.currentEdge) {
-        return state.currentEdge['incoming']
+        return state.currentEdge.incoming;
       }
       return null;
     },
@@ -51,6 +51,9 @@ export default new Vuex.Store({
     },
     elements: state => {
       return state.elements;
+    },
+    getCyElement: state => cy => {
+      return cy.$(`#${state.selectedNode}`);
     }
   },
   mutations: {
@@ -75,7 +78,7 @@ export default new Vuex.Store({
     },
     updateEdgeValue: (state, value) => {
       if (state.currentEdge) {
-        state.currentEdge['incoming'] = value;
+        state.currentEdge.incoming = value;
       }
     }
   },

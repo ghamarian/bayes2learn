@@ -7,11 +7,15 @@
       :preConfig="preConfig"
       :afterCreated="afterCreated"
       v-on:mousedown="addNode"
-      v-on:cxttapstart="updateNode"
     >
-      <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/>
+      <!-- <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/> -->
     </cytoscape>
-    <incoming-property :modalShow="modalShow" :properties="currentTarget" :active="incomingEdge" @closeModal="closeModal"></incoming-property>
+    <incoming-property
+      :modalShow="modalShow"
+      :properties="currentTarget"
+      :active="incomingEdge"
+      @closeModal="closeModal"
+    ></incoming-property>
   </div>
 </template>
 <script>
@@ -40,7 +44,16 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getNewNode", "elements", "getEdgeValue", "getSelectedProperties"])
+    ...mapGetters([
+      "getNewNode",
+      "elements",
+      "getEdgeValue",
+      "getSelectedProperties",
+      "getCyElement",
+      "getEdgeIncomingProperty",
+
+
+    ])
   },
   props: {
     msg: String
@@ -56,8 +69,10 @@ export default {
       // cytoscape.use(contextMenus, jquery)
       cytoscape.use(edgehandles);
     },
-    closeModal() {
+    async closeModal() {
       this.modalShow = false;
+      const cy = await this.$cytoscape.instance
+      this.$cytoscape.instance.then(cy => this.getCyElement(cy).data('name',  this.getEdgeIncomingProperty))
     },
     async addNode(event) {
       let evtTarget = event.target;
@@ -72,9 +87,9 @@ export default {
             weight: 75,
             content: _.cloneDeep(this.getNewNode.properties, true)
           },
-          position: event.position
         };
         this.pushElement(new_node);
+        cy.add({...new_node, position: event.position});
       }
     },
     updateNode(event) {
@@ -106,13 +121,19 @@ export default {
 
       cy.edgehandles(handle_edges_defaults);
 
-      cy.on("tap", "node", function(evt) { console.log(`${evt.target.id()}, ${evt.target.data().content}`);
+      cy.on("tap", "node", function(evt) {
+        console.log(`${evt.target.id()}, ${evt.target.data().content}`);
         that.selectNode(evt.target.id());
       });
 
       cy.on("ehcomplete", (event, sourceNode, targetNode, addedEles) => {
         let { position } = event;
-        let new_edge = {data: {...addedEles.data(), incoming: null}, group: "edges", position, name: 'edge'};
+        let new_edge = {
+          data: { ...addedEles.data(), incoming: null },
+          group: "edges",
+          position,
+          name: "edge"
+        };
         this.pushElement(new_edge);
         this.selectEdge(new_edge.data.id);
         this.currentTarget = Object.keys(targetNode.data().content);
