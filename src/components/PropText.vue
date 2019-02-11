@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div>{{ name }}</div>
-    <input class="prop-input" :value="getValue(name)" @input="updateElement({name: name, value: $event.target.value})" type="text">
+    <!-- <div>{{ name }}</div> -->
+    <label :for="name">{{ name }} </label>
+    <input :id="name" class="prop-input" :value="getValue(name)" @input="updateElement({name: name, value: $event.target.value})" type="text">
   </div>
 </template>
 <script>

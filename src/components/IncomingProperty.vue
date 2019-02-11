@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="modalShow" no-close-on-esc no-close-on-backdrop @close="closeModal" hide-footer>
+  <b-modal v-model="modalShow" no-close-on-esc no-close-on-backdrop @close="closeModal" @ok="closeModal">
     <b-list-group>
       <b-list-group-item
         v-for="item in properties"
@@ -13,7 +13,6 @@
         <!-- <b-badge variant="primary" pill>14</b-badge> -->
       </b-list-group-item>
     </b-list-group>
-    <b-btn class="mt-3" variant="primary" block @click="closeModal">Save</b-btn>
   </b-modal>
 </template>
 

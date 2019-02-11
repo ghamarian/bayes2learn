@@ -50,9 +50,7 @@ export default {
       "getEdgeValue",
       "getSelectedProperties",
       "getCyElement",
-      "getEdgeIncomingProperty",
-
-
+      "getEdgeIncomingProperty"
     ])
   },
   props: {
@@ -71,8 +69,12 @@ export default {
     },
     async closeModal() {
       this.modalShow = false;
-      const cy = await this.$cytoscape.instance
-      this.$cytoscape.instance.then(cy => this.getCyElement(cy).data('name',  this.getEdgeIncomingProperty))
+      if (this.getEdgeIncomingProperty) {
+        const cy = await this.$cytoscape.instance;
+        this.$cytoscape.instance.then(cy =>
+          this.getCyElement(cy).data("name", this.getEdgeIncomingProperty)
+        );
+      }
     },
     async addNode(event) {
       let evtTarget = event.target;
@@ -86,10 +88,10 @@ export default {
             root: "",
             weight: 75,
             content: _.cloneDeep(this.getNewNode.properties, true)
-          },
+          }
         };
         this.pushElement(new_node);
-        cy.add({...new_node, position: event.position});
+        cy.add({ ...new_node, position: event.position });
       }
     },
     updateNode(event) {
