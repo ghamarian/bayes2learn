@@ -5,9 +5,10 @@ Vue.use(Vuex);
 import distributions from "./assets/distributions.json";
 
 export default new Vuex.Store({
-
+  strict: true,
   state: {
-    selectedNode: "Poisson",
+    currentEdge: null,
+    selectedNode: null,
     newNode: "Poisson",
     elements: [],
     currentNode: null
@@ -33,6 +34,18 @@ export default new Vuex.Store({
       }
       return null;
     },
+    getEdgeValue: state => {
+      if (state.currentEdge) {
+        return state.currentEdge
+      }
+      return null;
+    },
+    getEdgeIncomingProperty: state => {
+      if (state.currentEdge) {
+        return state.currentEdge['incoming']
+      }
+      return null;
+    },
     selectedId: state => {
       return state.selectedNode;
     },
@@ -45,17 +58,26 @@ export default new Vuex.Store({
       state.selectedNode = node;
       state.currentNode = state.elements.filter(e => e.data.id == state.selectedNode)[0].data;
     },
+    selectEdge: (state, node) => {
+      state.selectedNode = node;
+      state.currentEdge = state.elements.filter(e => e.data.id == state.selectedNode)[0].data;
+    },
     setNewNode: (state, node) => {
       state.newNode = node;
     },
     pushElement: (state, payload) => {
-      state.elements.push(payload);
+      state.elements = [...state.elements, payload];
     },
     updateElement: (state, { name, value }) => {
       if (state.currentNode) {
         state.currentNode.content[name].value = value;
       }
     },
+    updateEdgeValue: (state, value) => {
+      if (state.currentEdge) {
+        state.currentEdge['incoming'] = value;
+      }
+    }
   },
   actions: {
   //   pushElement: ({

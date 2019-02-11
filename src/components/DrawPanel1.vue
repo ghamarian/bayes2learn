@@ -1,15 +1,18 @@
 <template>
   <!-- <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/> -->
-  <cytoscape
-    id="cyto"
-    :config="config"
-    :preConfig="preConfig"
-    :afterCreated="afterCreated"
-    v-on:mousedown="addNode"
-    v-on:cxttapstart="updateNode"
-  >
-    <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/>
-  </cytoscape>
+  <div>
+    <cytoscape
+      id="cyto"
+      :config="config"
+      :preConfig="preConfig"
+      :afterCreated="afterCreated"
+      v-on:mousedown="addNode"
+      v-on:cxttapstart="updateNode"
+    >
+      <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/>
+    </cytoscape>
+    <incoming-property :modalShow="modalShow" :properties="currentTarget" :active="incomingEdge" @closeModal="closeModal"></incoming-property>
+  </div>
 </template>
 <script>
 import jquery from "jquery";
@@ -20,6 +23,7 @@ import _ from "lodash";
 import edgehandles from "cytoscape-edgehandles";
 import handle_edges_defaults from "../assets/handled_edges";
 import config from "../assets/CytoscapeConfig";
+import IncomingProperty from "./IncomingProperty";
 
 // const elements = [...config.elements];
 delete config.elements;
@@ -28,23 +32,32 @@ export default {
   name: "DrawPanel",
   data: function() {
     return {
-      config
+      config,
+      currentTarget: null,
+      incomingEdge: null,
+      modalShow: false
       // elements
     };
   },
   computed: {
-    ...mapGetters(["getNewNode", "elements"])
+    ...mapGetters(["getNewNode", "elements", "getEdgeValue", "getSelectedProperties"])
   },
   props: {
     msg: String
   },
+  components: {
+    IncomingProperty
+  },
   methods: {
-    ...mapMutations(["selectNode", "pushElement"]),
+    ...mapMutations(["selectNode", "pushElement", "selectEdge"]),
     preConfig(cytoscape) {
       // it can be used both ways
       contextMenus(cytoscape, jquery);
       // cytoscape.use(contextMenus, jquery)
       cytoscape.use(edgehandles);
+    },
+    closeModal() {
+      this.modalShow = false;
     },
     async addNode(event) {
       let evtTarget = event.target;
@@ -93,15 +106,26 @@ export default {
 
       cy.edgehandles(handle_edges_defaults);
 
-      cy.on("tap", "node", function(evt) {
-        console.log(`${evt.target.id()}, ${evt.target.data().content}`);
+      cy.on("tap", "node", function(evt) { console.log(`${evt.target.id()}, ${evt.target.data().content}`);
         that.selectNode(evt.target.id());
       });
 
       cy.on("ehcomplete", (event, sourceNode, targetNode, addedEles) => {
         let { position } = event;
-        console.log(`the edge completed.....;`)
+        let new_edge = {data: {...addedEles.data(), incoming: null}, group: "edges", position, name: 'edge'};
+        this.pushElement(new_edge);
+        this.selectEdge(new_edge.data.id);
+        this.currentTarget = Object.keys(targetNode.data().content);
+        this.modalShow = true;
+        console.log(addedEles);
+      });
 
+      cy.on("tap", "edge", function(event) {
+        let { position } = event;
+        that.selectEdge(event.target.id());
+        that.selectNode(that.getEdgeValue.target);
+        that.currentTarget = Object.keys(that.getSelectedProperties);
+        that.modalShow = true;
       });
 
       cy.contextMenus({
@@ -113,7 +137,6 @@ export default {
             image: { src: "remove.svg", width: 12, height: 12, x: 6, y: 4 },
             selector: "node, edge",
             onClickFunction: function(event) {
-
               // var target = event.target || event.cyTarget;
               // target.remove();
               // let id_list = [];
