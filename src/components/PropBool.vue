@@ -1,9 +1,9 @@
 <template>
   <div>
     <div> {{ name }} </div>
-    <select class='my-option' @change="updateElement({name: name, value: $event.target.value})">
+    <select class='my-option' value="getValue(name)" @change="updateElement({name: name, value: $event.target.value})">
       <option value="True">True</option>
-      <option value="False" selected>False</option>
+      <option value="False">False</option>
     </select>
   </div>
 </template>
@@ -12,7 +12,7 @@ import { mapMutations } from "vuex";
 import { mapGetters } from "vuex";
 
 export default {
-  props: ["name"],
+  props: ["name", "value"],
   computed: {
     ...mapGetters(["getValue"])
   },
