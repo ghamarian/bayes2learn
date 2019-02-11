@@ -7,7 +7,7 @@
         class="d-flex justify-content-between align-items-center"
         button
         @click="click"
-        :class="{ 'active': isSelected(item)}"
+        :class="{ 'active': isSelected(item), 'disabled': false}"
       >
         {{ item }}
         <!-- <b-badge variant="primary" pill>14</b-badge> -->
