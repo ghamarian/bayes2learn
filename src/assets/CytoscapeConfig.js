@@ -71,11 +71,12 @@ style: [
     },
     {
         selector: "edge",
-        css: {
-            width: 3,
+        style: {
+            width: 5,
             "line-color": "#ccc",
             "target-arrow-color": "#ccc",
-            "target-arrow-shape": "triangle",
+            'curve-style': 'bezier',
+            'target-arrow-shape': 'triangle',
             label: `data(name)`
         }
     },
