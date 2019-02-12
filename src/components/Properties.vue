@@ -27,7 +27,8 @@ export default {
         NoneType: "PropText",
         str: "PropText",
         unknown: "PropText",
-        DType: "PropText"
+        DType: "PropText",
+        int: "PropText"
       }
     };
   },

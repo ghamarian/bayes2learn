@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="modalShow" no-close-on-esc no-close-on-backdrop @close="closeModal" @ok="closeModal">
+  <b-modal v-model="toShow" no-close-on-esc no-close-on-backdrop @ok="closeModal">
     <b-list-group>
       <b-list-group-item
         v-for="item in properties"
@@ -8,10 +8,7 @@
         button
         @click="click"
         :class="{ 'active': isSelected(item), 'disabled': false}"
-      >
-        {{ item }}
-        <!-- <b-badge variant="primary" pill>14</b-badge> -->
-      </b-list-group-item>
+      >{{ item }}</b-list-group-item>
     </b-list-group>
   </b-modal>
 </template>
@@ -22,7 +19,13 @@ import { mapMutations, mapGetters } from "vuex";
 export default {
   props: ["modalShow", "properties"],
   computed: {
-    ...mapGetters(["getEdgeIncomingProperty"])
+    ...mapGetters(["getEdgeIncomingProperty"]),
+    toShow: {
+      get() {
+        return this.modalShow;
+      },
+      set() {}
+    }
   },
   methods: {
     ...mapMutations(["updateEdgeValue"]),
