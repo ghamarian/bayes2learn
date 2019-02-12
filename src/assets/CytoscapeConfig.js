@@ -48,10 +48,12 @@ const config = {
             css: {
                 "text-valign": "center",
                 color: "white",
-                width: 200,
-                height: 40,
-                shape: "roundrectangle",
+                width: 60,
+                height: 60,
                 "text-wrap": "elipsis",
+                'text-valign': 'top',
+                'text-halign': 'center',
+                'color': 'black',
                 label: `data(name)`
             }
         },
@@ -67,6 +69,7 @@ const config = {
                 'border-color': 'black',
                 'text-valign': 'top',
                 'text-halign': 'center',
+                shape: "roundrectangle",
                 'opacity': 0.5,
                 'label': ""
             }
