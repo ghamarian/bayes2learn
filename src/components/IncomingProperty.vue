@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="toShow" no-close-on-esc no-close-on-backdrop @ok="closeModal">
+  <b-modal v-model="toShow" no-close-on-esc no-close-on-backdrop @ok="closeModal" @cancel="closeModal">
     <b-list-group>
       <b-list-group-item
         v-for="item in properties"

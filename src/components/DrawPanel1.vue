@@ -1,12 +1,7 @@
 <template>
   <!-- <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/> -->
   <div>
-    <cytoscape
-      id="cyto"
-      :config="config"
-      :preConfig="preConfig"
-      :afterCreated="afterCreated"
-    >
+    <cytoscape id="cyto" :config="config" :preConfig="preConfig" :afterCreated="afterCreated">
       <!-- <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/> -->
     </cytoscape>
     <incoming-property
@@ -27,6 +22,8 @@ import edgehandles from "cytoscape-edgehandles";
 import config from "../assets/CytoscapeConfig";
 import IncomingProperty from "./IncomingProperty";
 import EventSubscriber from "../js/CySubscribedEvents.js";
+import nearley from "nearley";
+import grammar from "../js/grammar.js";
 
 // const elements = [...config.elements];
 delete config.elements;
@@ -77,6 +74,14 @@ export default {
     },
     afterCreated(cy) {
       let subscriber = new EventSubscriber(cy, this);
+      // Create a Parser object from our grammar.
+      const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
+
+      // Parse something!
+      parser.feed("foo\n");
+
+      // parser.results is an array of possible parsings.
+      console.log(parser.results); // [[[[ "foo" ],"\n" ]]]
     }
   }
 };
