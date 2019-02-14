@@ -78,7 +78,7 @@ export default {
       const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 
       // Parse something!
-      parser.feed("a = log(10) ");
+      parser.feed("aalkd = log(10)");
 
       // parser.results is an array of possible parsings.
       console.log(parser.results); // [[[[ "foo" ],"\n" ]]]
