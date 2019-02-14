@@ -33,7 +33,7 @@ arith_expr -> term _ (("+"|"-") _ term):* {% id %}
 term -> factor _ (("*"|"@"|"/"|"%"|"//") _ factor):* {% id %}
 factor -> ("+"|"-"|"~") _ factor | power {% id %}
 power -> atom_expr _ ("**" factor):? {% id %}
-atom_expr -> ("await"):? _ atom _ trailer:* {% d => {console.log(`amir - ${d}`); return d} %}
+atom_expr -> ("await"):? _ atom _ trailer:* {% d => {console.log(`amir`); console.dir(d); return d} %}
 atom -> ( "[" _ testlist_comp:? _ "]" |
        name | number | string:+ | "..." | "None" | "True" | "False") {% id %}
 
@@ -57,11 +57,11 @@ sync_comp_for -> "for" _ exprlist _ "in" _ or_test _ comp_iter:? {% id %}
 comp_for -> "async":? _ sync_comp_for {% d => `${d[2]}` %}
 comp_if -> "if" _ test_nocond _ comp_iter:? {% d => `if (${d[2]}) ${d[4]}` %}
 
-number -> "-":? [0-9]:+ ("." [0-9]:+):? {% d => { var k = d.join(); console.log(`something ${k}`); return d.join() } %}
-name -> [a-zA-Z_]:+ {% d => { var k = d.join(); console.log(`something ${k}`); return d.join() } %}
-dqstring -> "\"" dstrchar:* "\"" {% d => { var k = d.join(); console.log(`something ${k}`); return d.join() } %}
+number -> "-":? [0-9]:+ ("." [0-9]:+):? {% d =>  d[1].join("") %}
+name -> [a-zA-Z_]:+ {% d =>  d[0].join("")  %}
+dqstring -> "\"" dstrchar:* "\"" {% d => d.join("") %}
 dstrchar -> [^\\"\n] {% id %}
-string -> dqstring {% d => { console.log(`kashk ${d}`); return d.join();} %}
+string -> dqstring {% d => d.join("") %}
 
 # Whitespace: `_` is optional, `__` is mandatory.
 _  -> wschar:* {% function(d) {return null;} %}

@@ -50,7 +50,7 @@ const config = {
                 color: "white",
                 width: 60,
                 height: 60,
-                "text-wrap": "elipsis",
+                "text-wrap": "ellipsis",
                 'text-valign': 'top',
                 'text-halign': 'center',
                 'color': 'black',
