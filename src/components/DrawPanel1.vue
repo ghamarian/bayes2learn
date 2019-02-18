@@ -8,19 +8,24 @@
       :modalShow="modalShow"
       :properties="currentTarget"
       :active="incomingEdge"
-      @closeModal="closeModal"
+      @closeModal="closeUtilityModal"
     ></incoming-property>
+    <utility-node
+      :utilityModalShow="utilityModalShow"
+      @closeModal="closeModal"
+    ></utility-node>
   </div>
 </template>
 <script>
 import jquery from "jquery";
 import contextMenus from "cytoscape-context-menus";
 import "cytoscape-context-menus/cytoscape-context-menus.css";
-import { mapMutations, mapGetters } from "vuex";
 import _ from "lodash";
+import { mapMutations, mapGetters } from "vuex";
 import edgehandles from "cytoscape-edgehandles";
 import config from "../assets/CytoscapeConfig";
 import IncomingProperty from "./IncomingProperty";
+import UtilityNode from "./UtilityNode";
 import EventSubscriber from "../js/CySubscribedEvents.js";
 import nearley from "nearley";
 import grammar from "../js/grammar.js";
@@ -35,7 +40,8 @@ export default {
       config,
       currentTarget: null,
       incomingEdge: null,
-      modalShow: false
+      modalShow: false,
+      utilityModalShow: false,
       // elements
     };
   },
@@ -53,7 +59,8 @@ export default {
     msg: String
   },
   components: {
-    IncomingProperty
+    IncomingProperty,
+    UtilityNode
   },
   methods: {
     ...mapMutations(["selectNode", "pushElement", "selectEdge"]),
@@ -72,16 +79,11 @@ export default {
         );
       }
     },
+    closeUtilityModal() {
+      this.utilityModalShow = false;
+    },
     afterCreated(cy) {
       let subscriber = new EventSubscriber(cy, this);
-      // Create a Parser object from our grammar.
-      const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
-
-      // Parse something!
-      parser.feed("aalkd = log(10)");
-
-      // parser.results is an array of possible parsings.
-      console.log(parser.results); // [[[[ "foo" ],"\n" ]]]
     }
   }
 };

@@ -4,7 +4,11 @@ class Subscribe {
     constructor(cy, vm) {
         cy.edgehandles(handle_edges_defaults);
         cy.on("tap", "node", function (evt) {
-            console.log(`${evt.target.id()}, ${evt.target.data().content}`);
+            if (evt.originalEvent.ctrlKey || evt.originalEvent.metaKey) {
+                console.log('seetting tooooo true');
+                vm.utilityModalShow = true;
+            }
+            // console.log(`${evt.target.id()}, ${evt.target.data().content}`);
             vm.selectNode(evt.target.id());
         });
         cy.on("tap", function (event) {
@@ -29,7 +33,7 @@ class Subscribe {
                 position
             } = event;
             let new_edge = {
-                data: { ...addedEles.data(),incoming: null },
+                data: { ...addedEles.data(), incoming: null },
                 group: "edges",
                 position,
                 name: "edge"
@@ -51,109 +55,88 @@ class Subscribe {
         });
         cy.contextMenus({
             menuItems: [{
-                    id: "remove",
-                    content: "remove",
-                    tooltipText: "remove",
-                    image: {
-                        src: "remove.svg",
-                        width: 12,
-                        height: 12,
-                        x: 6,
-                        y: 4
-                    },
-                    selector: "node, edge",
-                    onClickFunction: function (event) {
-                        var target = event.target || event.cyTarget;
-                        target.remove();
-
-                        // let id_list = vm.elements.map(e => e.data.id);
-                        // cy.$(`#${id_list[0]}`).move({ parent: id_list[3] });
-                        // cy.$(`#${id_list[1]}`).move({ parent: [id_list[3], id_list[4]] });
-                        // cy.$(`#${id_list[2]}`).move({ parent: [id_list[4]] });
-
-
-                        // let new_node2 = cy.add({
-                        //   group: "nodes",
-                        //   data: {
-                        //     id: "kashk2",
-                        //     name: "amir",
-                        //     root: "amir",
-                        //     weight: 75,
-                        //     content: "kashk"
-                        //   },
-                        //   position: event.position
-                        // });
-                        // console.log(cy.nodes().filter(ele => ele.selected()));
-                        // cy.nodes()
-                        //   .filter(ele => ele.selected())
-                        //   .move({ parent: new_node_id });
-                    },
-                    hasTrailingDivider: true
+                id: "remove",
+                content: "remove",
+                tooltipText: "remove",
+                image: {
+                    src: "remove.svg",
+                    width: 12,
+                    height: 12,
+                    x: 6,
+                    y: 4
                 },
-                {
-                    id: "hide",
-                    content: "hide",
-                    tooltipText: "hide",
-                    selector: "*",
-                    onClickFunction: function (event) {
-                        var target = event.target || event.cyTarget;
-                        target.hide();
-                    },
-                    disabled: false
+                selector: "node, edge",
+                onClickFunction: function (event) {
+                    var target = event.target || event.cyTarget;
+                    target.remove();
+
                 },
-                {
-                    id: "plate",
-                    content: "plate",
-                    tooltipText: "create plates for selected nodes",
-                    image: {
-                        src: "remove.svg",
-                        width: 12,
-                        height: 12,
-                        x: 6,
-                        y: 4
-                    },
-                    selector: "node, edge",
-                    onClickFunction: function (event) {
-                        let new_id = vm.$uuid.v4();
-                        let new_plate = {
-                            group: "nodes",
-                            data: {
-                                id: new_id,
-                                name: "plate",
-                                root: "",
-                                weight: 75,
-                                content: {
-                                    count: {
-                                        value: 1,
-                                        type: "unknown"
-                                    }
-                                },
-                            },
-                        };
-                        cy.add({
-                            ...new_plate,
-                            position: event.position
-                        });
-                        let parents = [];
-                        let selected_nodes = cy.nodes().filter(ele => ele.selected() && ele.data().hasOwnProperty('name'));
-                        if (selected_nodes.length == 0) {
-                            selected_nodes = event.target;
-                        }
-                        selected_nodes
-                            .forEach(ele => {
-                                let curr_parent_list = [];
-                                let curr_parent = ele.parent();
-                                for (let i = 0; i < curr_parent.length; i++) {
-                                    curr_parent_list.push(curr_parent[i].id());
+                hasTrailingDivider: true
+            },
+            {
+                id: "hide",
+                content: "hide",
+                tooltipText: "hide",
+                selector: "*",
+                onClickFunction: function (event) {
+                    var target = event.target || event.cyTarget;
+                    target.hide();
+                },
+                disabled: false
+            },
+            {
+                id: "plate",
+                content: "plate",
+                tooltipText: "create plates for selected nodes",
+                image: {
+                    src: "remove.svg",
+                    width: 12,
+                    height: 12,
+                    x: 6,
+                    y: 4
+                },
+                selector: "node, edge",
+                onClickFunction: function (event) {
+                    let new_id = vm.$uuid.v4();
+                    let new_plate = {
+                        group: "nodes",
+                        data: {
+                            id: new_id,
+                            name: "plate",
+                            root: "",
+                            weight: 75,
+                            content: {
+                                count: {
+                                    value: 1,
+                                    type: "unknown"
                                 }
-                                parents.push(curr_parent_list);
-                            });
-                        selected_nodes.forEach((ele, i) => ele.move({
-                            parent: [...parents[i], new_id]
-                        }));
-                        vm.pushElement(new_plate);
+                            },
+                        },
+                    };
+                    cy.add({
+                        ...new_plate,
+                        position: event.position
+                    });
+                    let parents = [];
+                    let selected_nodes = cy.nodes().filter(ele => ele.selected() && ele.data().hasOwnProperty('name'));
+                    if (selected_nodes.length == 0) {
+                        selected_nodes = event.target;
                     }
+                    selected_nodes
+                        .forEach(ele => {
+                            let curr_parent_list = [];
+                            let curr_parent = ele.parent();
+                            for (let i = 0; i < curr_parent.length; i++) {
+                                curr_parent_list.push(curr_parent[i].id());
+                            }
+                            parents.push(curr_parent_list);
+                        });
+                    selected_nodes.forEach((ele, i) => ele.move({
+                        parent: [...parents[i], new_id]
+                    }));
+                    vm.pushElement(new_plate);
                 }
+            }
             ]
         });
     }
