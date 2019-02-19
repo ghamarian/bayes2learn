@@ -83,10 +83,5 @@ export default new Vuex.Store({
     }
   },
   actions: {
-  //   pushElement: ({
-  //     commit
-  //   }, payload) => {
-  //     commit("updateValue", payload);
-  //   }
   }
 });

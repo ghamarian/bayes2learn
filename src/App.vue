@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  border: 10px solid burlywood;
+  /* border: 10px solid burlywood; */
 }
 
 #nav {

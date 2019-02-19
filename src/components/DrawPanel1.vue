@@ -10,10 +10,7 @@
       :active="incomingEdge"
       @closeModal="closeModal"
     ></incoming-property>
-    <utility-node
-      :utilityModalShow="utilityModalShow"
-      @closeUtilityModal="closeUtilityModal"
-    ></utility-node>
+    <utility-node :utilityModalShow="utilityModalShow" @closeUtilityModal="closeUtilityModal"></utility-node>
   </div>
 </template>
 <script>
@@ -41,7 +38,7 @@ export default {
       currentTarget: null,
       incomingEdge: null,
       modalShow: false,
-      utilityModalShow: false,
+      utilityModalShow: false
       // elements
     };
   },
@@ -93,12 +90,18 @@ export default {
 <style scoped>
 cytoscape {
   height: 100%;
-  background: mistyrose;
+  /* background: mistyrose; */
 }
 #cyto {
   height: 100%;
   display: block;
-  border: 1px solid blue;
-  background: beige;
+  /* border: 1px solid blue; */
+  /* background: lightgray; */
+  background-color: #f7f7f7;
+  background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.74) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255, 255, 255) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
 }
 </style>

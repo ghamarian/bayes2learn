@@ -49,7 +49,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main-bar {
-  border: 1px solid pink;
+  /* border: 3px solid black; */
   overflow: scroll;
   height: calc(100vh - 110px);
   box-sizing: border-box;

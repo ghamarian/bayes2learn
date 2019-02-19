@@ -50,6 +50,7 @@ const config = {
         "text-valign": "center",
         color: "white",
         width: 60,
+        "text-max-width": 200,
         height: 60,
         "text-wrap": "ellipsis",
         "text-valign": "top",
