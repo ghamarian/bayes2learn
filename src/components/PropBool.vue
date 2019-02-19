@@ -1,7 +1,11 @@
 <template>
   <div>
-    <div> {{ name }} </div>
-    <select class='my-option' :selected="getValue(name)" @change="updateElement({name: name, value: $event.target.value})">
+    <div>{{ name }}</div>
+    <select
+      class="my-option"
+      :selected="getValue(name)"
+      @change="updateElement({name: name, value: $event.target.value})"
+    >
       <option value="true">True</option>
       <option value="false">False</option>
     </select>

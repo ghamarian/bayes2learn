@@ -10,7 +10,7 @@
 // @ is an alias to /src
 import DrawPanel from "@/components/DrawPanel1.vue";
 import Nodes from "@/components/Nodes.vue";
-import Properties from "@/components/Properties.vue"
+import Properties from "@/components/Properties.vue";
 
 export default {
   name: "home",

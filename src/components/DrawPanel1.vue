@@ -8,11 +8,11 @@
       :modalShow="modalShow"
       :properties="currentTarget"
       :active="incomingEdge"
-      @closeModal="closeUtilityModal"
+      @closeModal="closeModal"
     ></incoming-property>
     <utility-node
       :utilityModalShow="utilityModalShow"
-      @closeModal="closeModal"
+      @closeUtilityModal="closeUtilityModal"
     ></utility-node>
   </div>
 </template>
@@ -28,7 +28,7 @@ import IncomingProperty from "./IncomingProperty";
 import UtilityNode from "./UtilityNode";
 import EventSubscriber from "../js/CySubscribedEvents.js";
 import nearley from "nearley";
-import grammar from "../js/grammar.js";
+// import grammar from "../js/grammar.js";
 
 // const elements = [...config.elements];
 delete config.elements;

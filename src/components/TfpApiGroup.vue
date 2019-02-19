@@ -1,11 +1,11 @@
 <template>
   <div>
-    <b-btn v-b-toggle.collapse variant="primary"><slot></slot></b-btn>
+    <b-btn v-b-toggle.collapse variant="primary">
+      <slot></slot>
+    </b-btn>
     <b-collapse id="collapse" class="mt-2">
       <div class="button-list">
-        <b-form-input v-model="substr"
-                  type="text"
-                  placeholder="Enter text to search"></b-form-input>
+        <b-form-input v-model="substr" type="text" placeholder="Enter text to search"></b-form-input>
         <b-button
           id="my-button"
           v-for="d in filteredElements"
@@ -26,14 +26,14 @@ import { mapGetters } from "vuex";
 export default {
   name: "ApiGroup",
 
-  props: ['groupName', 'elements'],
+  props: ["groupName", "elements"],
   data() {
     return {
       substr: ""
     };
   },
   computed: {
-    ...mapGetters(['getNewNode']),
+    ...mapGetters(["getNewNode"]),
     filteredElements() {
       return Object.keys(this.elements).filter(dist =>
         dist.toLowerCase().includes(this.substr.toLowerCase())
@@ -56,19 +56,17 @@ export default {
   text-align: center;
 }
 
- #my-button {
-    color: black !important;
-    background-color: white !important;
-    border-color: white !important;
-} 
-
+#my-button {
+  color: black !important;
+  background-color: white !important;
+  border-color: white !important;
+}
 
 #my-button.active {
-    color: mistyrose !important;
-    background-color: purple !important;
-    border-color: white !important;
-}  
-
+  color: mistyrose !important;
+  background-color: purple !important;
+  border-color: white !important;
+}
 
 /*#my-buttons [area-pressed^=true] {
     color: black !important;
