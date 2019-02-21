@@ -28,7 +28,8 @@ export default {
         str: "PropText",
         unknown: "PropText",
         DType: "PropText",
-        int: "PropText"
+        int: "PropText",
+        float: "PropText"
       }
     };
   },

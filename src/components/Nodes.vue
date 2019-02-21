@@ -2,7 +2,7 @@
   <div class="main-bar">
     <!-- <h1>{{ selected_node }}</h1> -->
     <div class="main-button-list">
-      <b-btn v-b-toggle.collapse1 variant="primary">Bijectors</b-btn>
+      <b-btn v-b-toggle="'collapse1'" variant="primary">Bijectors</b-btn>
       <b-collapse id="collapse1" class="mt-2">
         <div class="button-list">
           <button class="btn">Poission</button>
@@ -12,13 +12,15 @@
           <button class="btn">Normal</button>
         </div>
       </b-collapse>
-      <tfp-api-group class="button-list" :elements="distributions">Distirbutions</tfp-api-group>
+      <tfp-api-group class="button-list" :postfix="'distributions'" :elements="distributions">Distirbutions</tfp-api-group>
+      <tfp-api-group class="button-list" :postfix="'utility'" :elements="utilities">Utilities</tfp-api-group>
     </div>
   </div>
 </template>
 
 <script>
 import distributions from "../assets/distributions.json";
+import utilities from "../assets/utilities.json";
 import { mapMutations } from "vuex";
 import TfpApiGroup from "@/components/TfpApiGroup.vue";
 
@@ -27,15 +29,9 @@ export default {
 
   data: function() {
     return {
-      distributions: distributions.Distributions
+      distributions: distributions.Distributions,
+      utilities: utilities.Utilities
     };
-  },
-  computed: {
-    distributionsList() {
-      return Object.keys(this.distributions).filter(dist =>
-        dist.toLowerCase().includes(this.substr.toLowerCase())
-      );
-    }
   },
   methods: {
     ...mapMutations(["setNewNode"])

@@ -1,0 +1,7 @@
+export default {
+  'exp': 'exp',
+  'convert_to_tensor': 'convert_to_tensor',
+  'to_float': 'to_float',
+  'constant': 'constant',
+  'reduce_mean': 'reduce_mean',
+}

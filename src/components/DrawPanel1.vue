@@ -24,7 +24,7 @@ import config from "../assets/CytoscapeConfig";
 import IncomingProperty from "./IncomingProperty";
 import UtilityNode from "./UtilityNode";
 import EventSubscriber from "../js/CySubscribedEvents.js";
-import nearley from "nearley";
+// import nearley from "nearley";
 // import grammar from "../js/grammar.js";
 
 // const elements = [...config.elements];

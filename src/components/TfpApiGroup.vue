@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-btn v-b-toggle.collapse variant="primary">
+    <b-btn v-b-toggle="'collapse-' + postfix" variant="primary">
       <slot></slot>
     </b-btn>
-    <b-collapse id="collapse" class="mt-2">
+    <b-collapse :id="collapseId" class="mt-2">
       <div class="button-list">
         <b-form-input v-model="substr" type="text" placeholder="Enter text to search"></b-form-input>
         <b-button
@@ -26,7 +26,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "ApiGroup",
 
-  props: ["groupName", "elements"],
+  props: ["groupName", "elements", "postfix"],
   data() {
     return {
       substr: ""
@@ -38,7 +38,10 @@ export default {
       return Object.keys(this.elements).filter(dist =>
         dist.toLowerCase().includes(this.substr.toLowerCase())
       );
-    }
+    },
+    collapseId() {
+      return `collapse-${this.postfix}`;
+    }  
   },
   methods: {
     ...mapMutations(["setNewNode"])

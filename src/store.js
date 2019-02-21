@@ -3,6 +3,9 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 import distributions from "./assets/distributions.json";
+import utilities from "./assets/utilities.json";
+
+let all_props = Object.assign(distributions.Distributions, utilities.Utilities);
 
 export default new Vuex.Store({
   strict: true,
@@ -25,7 +28,7 @@ export default new Vuex.Store({
       console.log(`inside getNewNode`);
       return {
         name: state.newNode,
-        properties: distributions.Distributions[state.newNode]
+        properties: all_props[state.newNode]
       };
     },
     getValue: state => name => {

@@ -12,6 +12,7 @@
 
 <script>
 import { default as githubEmoji } from "../assets/github_emoji";
+import { default as tf_functions } from "../assets/tf_functions";
 import TextComplete from "v-textcomplete";
 
 export default {
@@ -22,10 +23,10 @@ export default {
       content: "",
       strategies: [
         {
-          match: /(^|\s):([a-z0-9+\-\_]*)$/,
+          match: /(^tf\.|\s\s)([a-z0-9+\-\_]*)$/,
           search(term, callback) {
             callback(
-              Object.keys(githubEmoji)
+              Object.keys(tf_functions)
                 .filter(function(name) {
                   return name.startsWith(term);
                 })
@@ -34,11 +35,11 @@ export default {
           },
           template(name) {
             return (
-              '<img width="17" src="' + githubEmoji[name] + '"></img> ' + name
+              `<div> ${tf_functions[name]} </div>`
             );
           },
           replace(value) {
-            return "$1:" + value + ": ";
+            return "$1" + value;
           }
         }
       ]
