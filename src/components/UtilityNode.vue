@@ -51,7 +51,7 @@ export default {
           }
         },
         {
-          match: /(:var)([a-z0-9+\-\_]*)$/,
+          match: /(v)@([a-z0-9+\-\_]*)$/,
           template(name) {
             return '<span class="m-2">' + name + "</span>";
           },
