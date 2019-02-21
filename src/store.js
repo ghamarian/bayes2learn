@@ -57,6 +57,9 @@ export default new Vuex.Store({
     },
     getCyElement: state => cy => {
       return cy.$(`#${state.selectedNode}`);
+    },
+    getCurrentEdge: state => cy => {
+      return cy.$(`#${state.currentEdge.id}`);
     }
   },
   mutations: {

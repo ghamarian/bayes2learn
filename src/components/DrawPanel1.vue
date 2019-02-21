@@ -49,7 +49,8 @@ export default {
       "getEdgeValue",
       "getSelectedProperties",
       "getCyElement",
-      "getEdgeIncomingProperty"
+      "getEdgeIncomingProperty",
+      "getCurrentEdge"
     ])
   },
   props: {
@@ -72,7 +73,7 @@ export default {
       if (this.getEdgeIncomingProperty) {
         const cy = await this.$cytoscape.instance;
         this.$cytoscape.instance.then(cy =>
-          this.getCyElement(cy).data("name", this.getEdgeIncomingProperty)
+          this.getCurrentEdge(cy).data("name", this.getEdgeIncomingProperty)
         );
       }
     },
