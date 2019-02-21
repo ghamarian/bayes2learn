@@ -60,6 +60,12 @@ export default new Vuex.Store({
     },
     getCurrentEdge: state => cy => {
       return cy.$(`#${state.currentEdge.id}`);
+    },
+    getAllIncomingVariables: state => cy => {
+      let cyNode = cy.$(`#${state.selectedNode}`);
+      let resultList = cyNode.incomers().filter(ele => ele.isEdge()).map(ele => ele.data('name'));
+      return resultList;
+
     }
   },
   mutations: {

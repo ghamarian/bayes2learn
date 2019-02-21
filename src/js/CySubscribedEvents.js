@@ -4,12 +4,12 @@ class Subscribe {
   constructor(cy, vm) {
     cy.edgehandles(handle_edges_defaults);
     cy.on("tap", "node", function(evt) {
+      vm.selectNode(evt.target.id());
       if (evt.originalEvent.altKey) {
-        console.log("seetting tooooo true");
+        vm.variables = vm.getAllIncomingVariables(cy);
         vm.utilityModalShow = true;
       }
       // console.log(`${evt.target.id()}, ${evt.target.data().content}`);
-      vm.selectNode(evt.target.id());
     });
     cy.on("tap", function(event) {
       let evtTarget = event.target;

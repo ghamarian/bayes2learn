@@ -10,7 +10,7 @@
       :active="incomingEdge"
       @closeModal="closeModal"
     ></incoming-property>
-    <utility-node :utilityModalShow="utilityModalShow" @closeUtilityModal="closeUtilityModal"></utility-node>
+    <utility-node :variables="variables" :utilityModalShow="utilityModalShow" @closeUtilityModal="closeUtilityModal"></utility-node>
   </div>
 </template>
 <script>
@@ -38,7 +38,8 @@ export default {
       currentTarget: null,
       incomingEdge: null,
       modalShow: false,
-      utilityModalShow: false
+      utilityModalShow: false,
+      variables: null
       // elements
     };
   },
@@ -50,7 +51,8 @@ export default {
       "getSelectedProperties",
       "getCyElement",
       "getEdgeIncomingProperty",
-      "getCurrentEdge"
+      "getCurrentEdge",
+      "getAllIncomingVariables"
     ])
   },
   props: {

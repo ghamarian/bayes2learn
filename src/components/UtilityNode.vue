@@ -11,19 +11,29 @@
 </template>
 
 <script>
-import { default as githubEmoji } from "../assets/github_emoji";
 import { default as tf_functions } from "../assets/tf_functions";
 import TextComplete from "v-textcomplete";
+import { mapGetters } from "vuex";
 
 export default {
   components: { TextComplete },
-  props: ["utilityModalShow"],
+  computed: {
+    ...mapGetters(["getAllIncomingVariables"]),
+    toShow: {
+      get() {
+        return this.utilityModalShow;
+      },
+      set() {}
+    }
+  },
+  props: ["utilityModalShow", "variables"],
   data() {
+    let vm = this;
     return {
       content: "",
       strategies: [
         {
-          match: /(^tf\.|\s\s)([a-z0-9+\-\_]*)$/,
+          match: /(tf)\.([a-z0-9+\-\_]*)$/,
           search(term, callback) {
             callback(
               Object.keys(tf_functions)
@@ -34,24 +44,25 @@ export default {
             );
           },
           template(name) {
-            return (
-              `<div> ${tf_functions[name]} </div>`
-            );
+            return `<div> ${tf_functions[name]} </div>`;
           },
           replace(value) {
-            return "$1" + value;
+            return "$1" + "." + value;
           }
+        },
+        {
+          match: /(:var)([a-z0-9+\-\_]*)$/,
+          template(name) {
+            return '<span class="m-2">' + name + "</span>";
+          },
+          search(item, callback) {},
+          replace(value) {
+            return value + " ";
+          },
+          list: this.variables
         }
       ]
     };
-  },
-  computed: {
-    toShow: {
-      get() {
-        return this.utilityModalShow;
-      },
-      set() {}
-    }
   },
   methods: {
     closeUtilityModal() {
