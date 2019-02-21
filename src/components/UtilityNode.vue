@@ -19,7 +19,6 @@ export default {
   components: { TextComplete },
   props: ["utilityModalShow", "variables"],
   data() {
-    let vm = this;
     return {
       content: ""
     };
@@ -59,7 +58,7 @@ export default {
           },
           search(item, callback) {},
           replace(value) {
-            return value + " ";
+            return value;
           },
           list: this.variables
         }
