@@ -17,6 +17,13 @@ import { mapGetters } from "vuex";
 
 export default {
   components: { TextComplete },
+  props: ["utilityModalShow", "variables"],
+  data() {
+    let vm = this;
+    return {
+      content: ""
+    };
+  },
   computed: {
     ...mapGetters(["getAllIncomingVariables"]),
     toShow: {
@@ -24,14 +31,9 @@ export default {
         return this.utilityModalShow;
       },
       set() {}
-    }
-  },
-  props: ["utilityModalShow", "variables"],
-  data() {
-    let vm = this;
-    return {
-      content: "",
-      strategies: [
+    },
+    strategies() {
+      return [
         {
           match: /(tf)\.([a-z0-9+\-\_]*)$/,
           search(term, callback) {
@@ -61,8 +63,8 @@ export default {
           },
           list: this.variables
         }
-      ]
-    };
+      ];
+    }
   },
   methods: {
     closeUtilityModal() {
