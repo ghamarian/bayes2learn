@@ -1,9 +1,17 @@
 <template>
-  <div class="home">
-    <Nodes msg="First"></Nodes>
-    <DrawPanel msg="Welcome to Your Vue.js App"/>
-    <Properties></Properties>
-  </div>
+  <v-container fluid grid-list-md fill-height>
+    <v-layout row wrap justify-space-around>
+      <v-flex d-flex md2>
+        <Nodes msg="First"></Nodes>
+      </v-flex>
+      <v-flex d-flex md8>
+        <DrawPanel msg="Welcome to Your Vue.js App"/>
+      </v-flex>
+      <v-flex d-flex md2>
+        <Properties></Properties>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -23,12 +31,12 @@ export default {
 </script>
 
 <style scoped>
-.home {
+/* .home {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   font-size: small;
   box-sizing: border-box;
-}
+} */
 
 .logo-holder {
   display: block;

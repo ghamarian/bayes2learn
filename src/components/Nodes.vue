@@ -2,18 +2,18 @@
   <div class="main-bar">
     <!-- <h1>{{ selected_node }}</h1> -->
     <div class="main-button-list">
-      <b-btn v-b-toggle="'collapse1'" variant="primary">Bijectors</b-btn>
+      <v-btn v-b-toggle="'collapse1'" variant="primary">Bijectors</v-btn>
       <b-collapse id="collapse1" class="mt-2">
         <div class="button-list">
-          <button class="btn">Poission</button>
-          <button class="btn">Normal</button>
-          <button class="btn">Normal</button>
-          <button class="btn">Normal</button>
-          <button class="btn">Normal</button>
+          <v-btn class="btn">Poission</v-btn>
+          <v-btn class="btn">Normal</v-btn>
+          <v-btn class="btn">Normal</v-btn>
+          <v-btn class="btn">Normal</v-btn>
+          <v-btn class="btn">Normal</v-btn>
         </div>
       </b-collapse>
-      <tfp-api-group class="button-list" :postfix="'distributions'" :elements="distributions">Distirbutions</tfp-api-group>
-      <tfp-api-group class="button-list" :postfix="'utility'" :elements="utilities">Utilities</tfp-api-group>
+      <tfp-api-group class="button-list" :postfix="'Distributions'" :elements="distributions">Distirbutions</tfp-api-group>
+      <tfp-api-group class="button-list" :postfix="'Utility'" :elements="utilities">Utilities</tfp-api-group>
     </div>
   </div>
 </template>

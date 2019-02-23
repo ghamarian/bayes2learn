@@ -7,7 +7,9 @@ import "cytoscape";
 import VueCytoscape from "vue-cytoscape";
 import "vue-cytoscape/dist/vue-cytoscape.css";
 import UUID from 'vue-uuid';
- 
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify);
 Vue.use(UUID);
 Vue.use(VueCytoscape);
 Vue.config.productionTip = false;
@@ -16,6 +18,8 @@ Vue.use(BootstrapVue);
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import 'vuetify/dist/vuetify.min.css'; // Ensure you are using css-loader
+
 
 new Vue({
   router,

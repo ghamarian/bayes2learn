@@ -1,21 +1,31 @@
 <template>
   <div>
-    <b-btn v-b-toggle="'collapse-' + postfix" variant="primary">
-      <slot></slot>
-    </b-btn>
-    <b-collapse :id="collapseId" class="mt-2">
-      <div class="button-list">
-        <b-form-input v-model="substr" type="text" placeholder="Enter text to search"></b-form-input>
-        <b-button
-          id="my-button"
-          v-for="d in filteredElements"
-          @click="setNewNode($event.target.textContent)"
-          :key="d.name"
-          :variant="'primary'"
-          :pressed="d === getNewNode.name"
-        >{{ d }}</b-button>
-      </div>
-    </b-collapse>
+    <v-layout columns wrap justify-space-around fill-width>
+      <v-expansion-panel>
+        <v-expansion-panel-content>
+          <div slot="header">{{ postfix }}</div>
+
+          <v-flex d-flex md12>
+            <v-text-field
+            v-model="substr"
+            label="Enter text to search"
+          ></v-text-field>
+            <!-- <v-form v-model="substr" type="text" placeholder="Enter text to search"></v-form> -->
+          </v-flex>
+          <v-flex v-for="d in filteredElements" :key="d.name" d-flex md12 x12>
+            <v-btn
+              flat
+              depressed
+              class="text-truncate caption text-capitalize"
+              id="my-button"
+              @click="setNewNode($event.target.textContent)"
+              :key="d.name"
+              :pressed="d === getNewNode.name"
+            >{{ d }}</v-btn>
+          </v-flex>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-layout>
   </div>
 </template>
 
@@ -41,7 +51,7 @@ export default {
     },
     collapseId() {
       return `collapse-${this.postfix}`;
-    }  
+    }
   },
   methods: {
     ...mapMutations(["setNewNode"])
@@ -51,7 +61,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.main-bar {
+/* .main-bar {
   border: 1px solid pink;
   overflow: scroll;
   height: calc(100vh - 110px);
@@ -69,7 +79,7 @@ export default {
   color: mistyrose !important;
   background-color: purple !important;
   border-color: white !important;
-}
+} */
 
 /*#my-buttons [area-pressed^=true] {
     color: black !important;
@@ -77,19 +87,18 @@ export default {
     border-color: white !important;
 } */
 
-.main-button-list {
+/* .main-button-list {
   display: grid;
   grid-template-columns: minmax(200px, 1fr);
   grid-gap: 10px;
   overflow: scroll;
   text-align: center;
-}
+} */
 
-.button-list {
+/* .button-list {
   display: grid;
   grid-template-columns: minmax(200px, 1fr);
   grid-gap: 2px;
-  /* height: 100vh; */
   overflow: scroll;
 }
 h3 {
@@ -105,5 +114,5 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
