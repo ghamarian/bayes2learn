@@ -13,23 +13,26 @@
 <script>
 import { default as tf_functions } from "../assets/tf_functions";
 import TextComplete from "v-textcomplete";
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: { TextComplete },
   props: ["utilityModalShow", "variables"],
-  data() {
-    return {
-      content: ""
-    };
-  },
   computed: {
-    ...mapGetters(["getAllIncomingVariables"]),
+    ...mapGetters(["getAllIncomingVariables", "getValue"]),
     toShow: {
       get() {
         return this.utilityModalShow;
       },
       set() {}
+    },
+    content: {
+      get() {
+        return this.getValue("function")
+      },
+      set(value) {
+        this.updateElement({name: "function", value: value})
+      }
     },
     strategies() {
       return [
@@ -66,6 +69,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(["updateElement"]),
     closeUtilityModal() {
       this.$emit("closeUtilityModal");
     }
