@@ -2,7 +2,6 @@
   <!-- <cytoscape :config="config" :preConfig="preConfig" :afterCreated="afterCreated"/> -->
   <div>
     <cytoscape id="cyto" :config="config" :preConfig="preConfig" :afterCreated="afterCreated">
-      <!-- <cy-element v-for="def in elements" :key="`${def.data.id}`" :definition="def"/> -->
     </cytoscape>
     <incoming-property
       :modalShow="modalShow"
@@ -10,7 +9,12 @@
       :active="incomingEdge"
       @closeModal="closeModal"
     ></incoming-property>
-    <utility-node :variables="variables" :utilityModalShow="utilityModalShow" @closeUtilityModal="closeUtilityModal"></utility-node>
+    <utility-node
+      v-if="utilityModalShow"
+      :variables="variables"
+      :utilityModalShow="utilityModalShow"
+      @closeUtilityModal="closeUtilityModal"
+    ></utility-node>
   </div>
 </template>
 <script>
@@ -93,13 +97,10 @@ export default {
 <style scoped>
 cytoscape {
   height: 100%;
-  /* background: mistyrose; */
 }
 #cyto {
   height: 100%;
-  display: block;
-  /* border: 1px solid blue; */
-  /* background: lightgray; */
+  background: lightgray;
   background-color: #f7f7f7;
   background-image: linear-gradient(white 2px, transparent 2px),
     linear-gradient(90deg, white 2px, transparent 2px),

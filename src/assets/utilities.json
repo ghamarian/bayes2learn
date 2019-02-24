@@ -10,6 +10,17 @@
                 "value": "function",
                 "options": []
             }
+        },
+        "amir": {
+            "function": {
+                "type": "unknown",
+                "value": ""
+            },
+            "name": {
+                "type": "str",
+                "value": "function",
+                "options": []
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ Vue.use(Vuex);
 import distributions from "./assets/distributions.json";
 import utilities from "./assets/utilities.json";
 
-let all_props = Object.assign(distributions.Distributions, utilities.Utilities);
+let all_props = Object.assign({}, distributions.Distributions, utilities.Utilities);
 
 export default new Vuex.Store({
   strict: true,
