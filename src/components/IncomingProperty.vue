@@ -18,7 +18,7 @@
                 <tr @click="select(props.item)" :active="props.selected">
                   <td>{{ props.item.name }}</td>
                   <td class="justify-center layout px-0">
-                    <v-icon small class="mr-2" @click="editItem(props.item.name)">edit</v-icon>
+                    <v-icon :disabled="props.item.disabled" small class="mr-2" @click="editItem(props.item.name)">edit</v-icon>
                     <v-icon small @click="deleteItem(props.item)">delete</v-icon>
                   </td>
                 </tr>
@@ -66,16 +66,13 @@ export default {
       set() {}
     },
     propertiesObjects() {
-      return this.properties.map(ele => Object.assign({}, { name: ele }));
+      return this.properties.map(ele => Object.assign({}, { name: ele, disabled: true }));
     }
   },
   methods: {
     ...mapMutations(["updateEdgeValue"]),
     closeModal() {
       this.$emit("closeModal");
-    },
-    click(event) {
-      this.updateEdgeValue(event.target.innerText);
     },
     select(selectedItem) {
       this.propertiesObjects.forEach(item => {
