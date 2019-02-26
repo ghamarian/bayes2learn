@@ -17,7 +17,7 @@
               <template slot="items" slot-scope="props">
                 <tr @click="select(props.item)" :active="props.selected">
                   <td>{{ props.item.name }}</td>
-                  <td class="justify-center layout px-0">
+                  <td class="text-xs-right">
                     <v-icon :disabled="props.item.disabled" small class="mr-2" @click="editItem(props.item.name)">edit</v-icon>
                     <v-icon small @click="deleteItem(props.item)">delete</v-icon>
                   </td>
@@ -49,7 +49,7 @@ export default {
           sortable: false,
           value: "name"
         },
-        { text: "Actions", value: "name", sortable: false, align: "center" }
+        { text: "Actions", value: "name", sortable: false, align: "right" }
       ]
     };
   },
