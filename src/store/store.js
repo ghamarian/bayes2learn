@@ -2,8 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
-import distributions from "./assets/distributions.json";
-import utilities from "./assets/utilities.json";
+import distributions from "../assets/distributions.json";
+import utilities from "../assets/utilities.json";
 
 let all_props = Object.assign({}, distributions.Distributions, utilities.Utilities);
 
