@@ -71,11 +71,11 @@ export default new Vuex.Store({
   mutations: {
     selectNode: (state, node) => {
       state.selectedNode = node;
-      state.currentNode = state.elements.filter(e => e.data.id == state.selectedNode)[0].data;
+      state.currentNode = state.elements.find(e => e.data.id == state.selectedNode).data;
     },
     selectEdge: (state, node) => {
       state.selectedNode = node;
-      state.currentEdge = state.elements.filter(e => e.data.id == state.selectedNode)[0].data;
+      state.currentEdge = state.elements.find(e => e.data.id == state.selectedNode).data;
     },
     setNewNode: (state, node) => {
       state.newNode = node;
