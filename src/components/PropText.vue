@@ -1,8 +1,20 @@
 <template>
   <div>
     <!-- <div>{{ name }}</div> -->
-    <label :for="name">{{ name }} </label>
-    <input :id="name" class="prop-input" :value="getValue(name)" @input="updateElement({name: name, value: $event.target.value})" type="text">
+    <!-- <label :for="name">{{ name }}</label>
+    <input
+      :id="name"
+      class="prop-input"
+      :value="getValue(name)"
+      @input="updateElement({name: name, value: $event.target.value})"
+      type="text"
+    >-->
+    <v-text-field
+      :id="name"
+      :label="name"
+      :placeholder="getValue(name)"
+      @input="updateElement({name: name, value: $event})"
+    ></v-text-field>
   </div>
 </template>
 <script>
@@ -21,9 +33,5 @@ export default {
 </script>
 
 <style scoped>
-.prop-input {
-  width: 100%;
-  height: calc(2.25rem + 2px);
-}
 </style>
 
