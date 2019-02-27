@@ -85,7 +85,9 @@ export default new Vuex.Store({
     },
     updateElement: (state, { name, value }) => {
       if (state.currentNode) {
-        Vue.set(state.currentNode.content, name, {"value": value, type: "unknown"});
+        let old = state.currentNode.content[name] || {type: "unknown"};
+        let newNode = Object.assign({}, old, {"value": value});
+        Vue.set(state.currentNode.content, name, newNode);
       }
     },
     updateEdgeValue: (state, value) => {

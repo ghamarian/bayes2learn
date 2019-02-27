@@ -73,7 +73,7 @@ export default {
     return {
       addDialog: false,
       editedItem: {
-        name: ""
+        name: "",
       },
       headers: [
         {
@@ -86,9 +86,9 @@ export default {
       ]
     };
   },
-  props: ["modalShow", "properties"],
+  props: ["modalShow"],
   computed: {
-    ...mapGetters(["getEdgeIncomingProperty"]),
+    ...mapGetters(["getEdgeIncomingProperty", "getSelectedProperties"]),
     selected() {
       return [{ name: this.getEdgeIncomingProperty }];
     },
@@ -99,13 +99,13 @@ export default {
       set() {}
     },
     propertiesObjects() {
-      return this.properties.map(ele =>
+      return Object.keys(this.getSelectedProperties).map(ele =>
         Object.assign({}, { name: ele, disabled: true })
       );
     }
   },
   methods: {
-    ...mapMutations(["updateEdgeValue"]),
+    ...mapMutations(["updateEdgeValue", "updateElement"]),
     closeModal() {
       this.$emit("closeModal");
     },
@@ -127,17 +127,18 @@ export default {
         this.properties.splice(index, 1);
     },
     close() {
-      this.dialog = false;
+      this.addDialog = false;
       setTimeout(() => {
         this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
+        // this.editedIndex = -1;
       }, 300);
     },
     save() {
       if (this.editedIndex > -1) {
         Object.assign(this.properties[this.editedIndex], this.editedItem);
       } else {
-        this.properties.push(this.editedItem);
+        this.updateElement({name: this.editedItem.name, value: "newlyadded"});
+        // this.properties.push(this.editedItem);
       }
       this.close();
     }
