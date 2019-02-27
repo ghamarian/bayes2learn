@@ -8,7 +8,7 @@
           </v-card-title>
           <v-card-text>
             <v-dialog v-model="addDialog" max-width="500px">
-              <v-btn slot="activator" color="primary" dark class="mb-2">New property</v-btn>
+              <v-btn v-if="isCurrentNodeUtility" slot="activator" color="primary" dark class="mb-2">New property</v-btn>
               <v-card>
                 <v-card-title>
                   <span class="headline">Add Property</span>
@@ -88,7 +88,7 @@ export default {
   },
   props: ["modalShow"],
   computed: {
-    ...mapGetters(["getEdgeIncomingProperty", "getSelectedProperties"]),
+    ...mapGetters(["getEdgeIncomingProperty", "getSelectedProperties", "isCurrentNodeUtility"]),
     selected() {
       return [{ name: this.getEdgeIncomingProperty }];
     },
@@ -130,7 +130,6 @@ export default {
       this.addDialog = false;
       setTimeout(() => {
         this.editedItem = Object.assign({}, this.defaultItem);
-        // this.editedIndex = -1;
       }, 300);
     },
     save() {
@@ -138,7 +137,6 @@ export default {
         Object.assign(this.properties[this.editedIndex], this.editedItem);
       } else {
         this.updateElement({name: this.editedItem.name, value: "newlyadded"});
-        // this.properties.push(this.editedItem);
       }
       this.close();
     }

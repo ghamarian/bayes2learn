@@ -17,6 +17,9 @@ export default new Vuex.Store({
     currentNode: null
   },
   getters: {
+    isCurrentNodeUtility: state => {
+        return Object.keys(utilities.Utilities).includes(state.currentNode.name);
+    },
     getSelectedProperties: state => {
       // return distributions.Distributions[state.selectedNode];
       if (state.currentNode) {
