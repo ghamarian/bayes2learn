@@ -136,7 +136,7 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.properties[this.editedIndex], this.editedItem);
       } else {
-        this.updateElement({name: this.editedItem.name, value: "newlyadded"});
+        this.updateElement({name: this.editedItem.name, value: ""});
       }
       this.close();
     }
