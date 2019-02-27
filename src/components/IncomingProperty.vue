@@ -49,13 +49,13 @@
                   <td>{{ props.item.name }}</td>
                   <td class="text-xs-right">
                     <v-icon
-                      :disabled="!isCurrentNodeUtility"
+                      :disabled="!isPropertyEditable(props.item.name)"
                       small
                       class="mr-2"
                       @click="editItem(props.item.name)"
                     >edit</v-icon>
                     <v-icon
-                      :disabled="!isCurrentNodeUtility"
+                      :disabled="!isPropertyEditable(props.item.name)"
                       small
                       @click="deleteItem(props.item)"
                     >delete</v-icon>
@@ -101,7 +101,8 @@ export default {
     ...mapGetters([
       "getEdgeIncomingProperty",
       "getSelectedProperties",
-      "isCurrentNodeUtility"
+      "isCurrentNodeUtility",
+      "isPropertyEditable"
     ]),
     selected() {
       return [{ name: this.getEdgeIncomingProperty }];
