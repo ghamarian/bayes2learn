@@ -21,7 +21,7 @@ export default new Vuex.Store({
         return Object.keys(utilities.Utilities).includes(state.currentNode.name);
     },
     isPropertyEditable: (state, getters) => value => {
-      return getters.isCurrentNodeUtility && !['function', 'name'].includes(value); 
+      return getters.isCurrentNodeUtility && !['output', 'name'].includes(value); 
     },
     getSelectedProperties: state => {
       // return distributions.Distributions[state.selectedNode];

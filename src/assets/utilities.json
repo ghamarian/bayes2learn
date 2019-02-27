@@ -1,7 +1,7 @@
 {
     "Utilities": {
         "gather": {
-            "function": {
+            "output": {
                 "type": "unknown",
                 "value": ""
             },
@@ -12,7 +12,7 @@
             }
         },
         "amir": {
-            "function": {
+            "output": {
                 "type": "unknown",
                 "value": ""
             },
