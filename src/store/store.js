@@ -85,9 +85,6 @@ export default new Vuex.Store({
     },
     updateElement: (state, { name, value }) => {
       if (state.currentNode) {
-        // let old = state.currentNode.content[name] || Object.assign({}, state.currentNode.content.name); //copy name property as default
-        // let newNode = Object.assign({}, old, {"value": value});
-        // state.currentNode.content = Object.assign({}, state.currentNode.content, {[name]: newNode});
         Vue.set(state.currentNode.content, name, {"value": value, type: "unknown"});
       }
     },
