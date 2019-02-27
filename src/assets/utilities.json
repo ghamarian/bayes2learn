@@ -7,7 +7,7 @@
             },
             "name": {
                 "type": "str",
-                "value": "function",
+                "value": "gather",
                 "options": []
             }
         },
@@ -18,7 +18,7 @@
             },
             "name": {
                 "type": "str",
-                "value": "function",
+                "value": "amir",
                 "options": []
             }
         }

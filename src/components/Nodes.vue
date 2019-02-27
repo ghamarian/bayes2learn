@@ -34,5 +34,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.button-list {
+  overflow: scroll;
+  max-height: 30%;
+}
+html {
+  height: 100%;
+  overflow: hidden !important;
+}
 </style>
