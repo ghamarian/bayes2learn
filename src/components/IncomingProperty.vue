@@ -7,6 +7,30 @@
             <span class="headline">Incoming property</span>
           </v-card-title>
           <v-card-text>
+            <v-dialog v-model="addDialog" max-width="500px">
+              <v-btn slot="activator" color="primary" dark class="mb-2">New property</v-btn>
+              <v-card>
+                <v-card-title>
+                  <span class="headline">Add Property</span>
+                </v-card-title>
+
+                <v-card-text>
+                  <v-container grid-list-md>
+                    <v-layout wrap>
+                      <v-flex xs12 sm6 md4>
+                        <v-text-field v-model="editedItem.name" label="Property name"></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue darken-1" flat @click="close">Cancel</v-btn>
+                  <v-btn color="blue darken-1" flat @click="save">Save</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
             <v-data-table
               :headers="headers"
               :items="propertiesObjects"
@@ -18,7 +42,12 @@
                 <tr @click="select(props.item)" :active="props.selected">
                   <td>{{ props.item.name }}</td>
                   <td class="text-xs-right">
-                    <v-icon :disabled="props.item.disabled" small class="mr-2" @click="editItem(props.item.name)">edit</v-icon>
+                    <v-icon
+                      :disabled="props.item.disabled"
+                      small
+                      class="mr-2"
+                      @click="editItem(props.item.name)"
+                    >edit</v-icon>
                     <v-icon small @click="deleteItem(props.item)">delete</v-icon>
                   </td>
                 </tr>
@@ -42,6 +71,10 @@ import { mapMutations, mapGetters } from "vuex";
 export default {
   data() {
     return {
+      addDialog: false,
+      editedItem: {
+        name: ""
+      },
       headers: [
         {
           text: "Name",
@@ -56,8 +89,8 @@ export default {
   props: ["modalShow", "properties"],
   computed: {
     ...mapGetters(["getEdgeIncomingProperty"]),
-    selected(){
-      return [{ name: this.getEdgeIncomingProperty }]
+    selected() {
+      return [{ name: this.getEdgeIncomingProperty }];
     },
     toShow: {
       get() {
@@ -66,7 +99,9 @@ export default {
       set() {}
     },
     propertiesObjects() {
-      return this.properties.map(ele => Object.assign({}, { name: ele, disabled: true }));
+      return this.properties.map(ele =>
+        Object.assign({}, { name: ele, disabled: true })
+      );
     }
   },
   methods: {
@@ -100,9 +135,9 @@ export default {
     },
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem);
+        Object.assign(this.properties[this.editedIndex], this.editedItem);
       } else {
-        this.desserts.push(this.editedItem);
+        this.properties.push(this.editedItem);
       }
       this.close();
     }

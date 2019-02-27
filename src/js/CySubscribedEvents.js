@@ -38,7 +38,8 @@ class Subscribe {
       };
       vm.pushElement(new_edge);
       vm.selectEdge(new_edge.data.id);
-      vm.currentTarget = Object.keys(targetNode.data().content);
+      vm.selectNode(vm.getEdgeValue.target);
+      vm.currentTarget = Object.keys(vm.getSelectedProperties);
       vm.modalShow = true;
       console.log(addedEles);
     });
