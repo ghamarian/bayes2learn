@@ -8,7 +8,13 @@
           </v-card-title>
           <v-card-text>
             <v-dialog v-model="addDialog" max-width="500px">
-              <v-btn v-if="isCurrentNodeUtility" slot="activator" color="primary" dark class="mb-2">New property</v-btn>
+              <v-btn
+                v-if="isCurrentNodeUtility"
+                slot="activator"
+                color="primary"
+                dark
+                class="mb-2"
+              >New property</v-btn>
               <v-card>
                 <v-card-title>
                   <span class="headline">Add Property</span>
@@ -43,12 +49,16 @@
                   <td>{{ props.item.name }}</td>
                   <td class="text-xs-right">
                     <v-icon
-                      :disabled="props.item.disabled"
+                      :disabled="!isCurrentNodeUtility"
                       small
                       class="mr-2"
                       @click="editItem(props.item.name)"
                     >edit</v-icon>
-                    <v-icon small @click="deleteItem(props.item)">delete</v-icon>
+                    <v-icon
+                      :disabled="!isCurrentNodeUtility"
+                      small
+                      @click="deleteItem(props.item)"
+                    >delete</v-icon>
                   </td>
                 </tr>
               </template>
@@ -73,7 +83,7 @@ export default {
     return {
       addDialog: false,
       editedItem: {
-        name: "",
+        name: ""
       },
       headers: [
         {
@@ -88,7 +98,11 @@ export default {
   },
   props: ["modalShow"],
   computed: {
-    ...mapGetters(["getEdgeIncomingProperty", "getSelectedProperties", "isCurrentNodeUtility"]),
+    ...mapGetters([
+      "getEdgeIncomingProperty",
+      "getSelectedProperties",
+      "isCurrentNodeUtility"
+    ]),
     selected() {
       return [{ name: this.getEdgeIncomingProperty }];
     },
@@ -100,12 +114,12 @@ export default {
     },
     propertiesObjects() {
       return Object.keys(this.getSelectedProperties).map(ele =>
-        Object.assign({}, { name: ele, disabled: true })
+        Object.assign({}, { name: ele, disabled: false })
       );
     }
   },
   methods: {
-    ...mapMutations(["updateEdgeValue", "updateElement"]),
+    ...mapMutations(["updateEdgeValue", "updateElement", "deleteProperty"]),
     closeModal() {
       this.$emit("closeModal");
     },
@@ -117,14 +131,19 @@ export default {
       });
     },
     editItem(item) {
-      this.editedIndex = this.properties.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialog = true;
+      let temp = Object.values(this.propertiesObjects).find(
+        ele => ele.name == item
+      );
+      this.editedItem = Object.assign({}, temp);
+      this.deleteProperty(item);
+      this.addDialog = true;
     },
     deleteItem(item) {
-      const index = this.desserts.indexOf(item);
+      let temp = Object.values(this.propertiesObjects).find(
+        ele => ele.name == item
+      );
       confirm("Are you sure you want to delete this item?") &&
-        this.properties.splice(index, 1);
+        this.deleteProperty(item.name);
     },
     close() {
       this.addDialog = false;
@@ -136,7 +155,7 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.properties[this.editedIndex], this.editedItem);
       } else {
-        this.updateElement({name: this.editedItem.name, value: ""});
+        this.updateElement({ name: this.editedItem.name, value: "" });
       }
       this.close();
     }

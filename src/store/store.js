@@ -93,6 +93,19 @@ export default new Vuex.Store({
         Vue.set(state.currentNode.content, name, newNode);
       }
     },
+    deleteProperty: (state, name) => {
+      if (state.currentNode && state.currentNode.content[name]) {
+          Vue.delete(state.currentNode.content, name);
+        }
+    },
+    renameProperty: (state, {name, newName}) => {
+      // fix this maybe possible
+      if (state.currentNode) {
+        let old = state.currentNode.content[name] || {type: "unknown"};
+        let newNode = Object.assign({}, old, {"value": value});
+        Vue.set(state.currentNode.content, name, newNode);
+      }
+    },
     updateEdgeValue: (state, value) => {
       if (state.currentEdge) {
         state.currentEdge.incoming = value;
