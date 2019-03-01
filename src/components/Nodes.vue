@@ -1,21 +1,11 @@
 <template>
   <div>
     <v-expansion-panel>
-      <v-expansion-panel-content>
+      <v-expansion-panel-content v-for="(grp, name) in tfpGroups" :key="grp">
         <template v-slot:header>
-          <div>Distirbution</div>
+          <div>{{ name }}</div>
         </template>
-        <tfp-api-group
-          :postfix="'Distributions'"
-          :elements="distributions"
-        >Distirbutions</tfp-api-group>
-      </v-expansion-panel-content>
-
-      <v-expansion-panel-content >
-        <template v-slot:header>
-          <div>Utility</div>
-        </template>
-        <tfp-api-group :postfix="'Utility'" :elements="utilities">Utilities</tfp-api-group>
+        <tfp-api-group :elements="grp"></tfp-api-group>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </div>
@@ -32,8 +22,10 @@ export default {
 
   data: function() {
     return {
-      distributions: distributions.Distributions,
-      utilities: utilities.Utilities
+      tfpGroups: {
+        Distributions: distributions.Distributions,
+        Utilities: utilities.Utilities
+      }
     };
   },
   methods: {
@@ -54,5 +46,4 @@ html {
 .v-expansion-panel {
   text-align: center !important;
 }
-
 </style>

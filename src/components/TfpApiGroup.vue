@@ -24,7 +24,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "ApiGroup",
 
-  props: ["groupName", "elements", "postfix"],
+  props: ["elements"],
   data() {
     return {
       substr: ""
