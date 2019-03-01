@@ -1,24 +1,19 @@
 <template>
   <div>
-    <v-expansion-panel>
-      <v-expansion-panel-content>
-        <div class="text-center" slot="header">{{ postfix }}</div>
-        <v-container>
-          <v-text-field v-model="substr" label="Enter text to search"></v-text-field>
-          <v-btn-toggle block>
-            <v-btn
-              v-for="d in filteredElements"
-              block
-              depressed
-              class="text-truncate caption text-capitalize"
-              id="my-button"
-              @click="setNewNode($event.target.textContent)"
-              :key="d.name"
-            >{{ d }}</v-btn>
-          </v-btn-toggle>
-        </v-container>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
+    <v-container class="button-list">
+      <v-text-field v-model="substr" label="Enter text to search"></v-text-field>
+      <v-btn-toggle block >
+        <v-btn
+          v-for="d in filteredElements"
+          block
+          depressed
+          class="text-truncate text-capitalize"
+          id="my-button"
+          @click="setNewNode($event.target.textContent)"
+          :key="d.name"
+        >{{ d }}</v-btn>
+      </v-btn-toggle>
+    </v-container>
   </div>
 </template>
 
@@ -61,4 +56,10 @@ export default {
   /* justify-content: stretch; */
   /* align-content: stretch; */
 }
+.button-list {
+  overflow: scroll;
+  max-height: 70vh;
+}
+
+
 </style>

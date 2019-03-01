@@ -1,11 +1,23 @@
 <template>
   <div>
-    <tfp-api-group
-      class="button-list"
-      :postfix="'Distributions'"
-      :elements="distributions"
-    >Distirbutions</tfp-api-group>
-    <tfp-api-group class="button-list" :postfix="'Utility'" :elements="utilities">Utilities</tfp-api-group>
+    <v-expansion-panel>
+      <v-expansion-panel-content>
+        <template v-slot:header>
+          <div>Distirbution</div>
+        </template>
+        <tfp-api-group
+          :postfix="'Distributions'"
+          :elements="distributions"
+        >Distirbutions</tfp-api-group>
+      </v-expansion-panel-content>
+
+      <v-expansion-panel-content >
+        <template v-slot:header>
+          <div>Utility</div>
+        </template>
+        <tfp-api-group :postfix="'Utility'" :elements="utilities">Utilities</tfp-api-group>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
   </div>
 </template>
 
@@ -35,12 +47,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.button-list {
-  overflow: scroll;
-  max-height: 30%;
-}
 html {
   height: 100%;
   overflow: hidden !important;
 }
+.v-expansion-panel {
+  text-align: center !important;
+}
+
 </style>
